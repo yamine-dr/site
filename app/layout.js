@@ -1,5 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Orbit, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
+const orbit = Orbit({
+  subsets: ["latin"],
+  weights: ["400", "500", "600", "700"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${orbit.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
