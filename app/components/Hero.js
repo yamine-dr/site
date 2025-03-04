@@ -3,13 +3,13 @@ export default function Hero() {
         <div className="hero bg-base-200">
             <div className="text-center hero-content">
                 <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold">
-                        Hello there! 👋
+                    <h1 className="text-5xl font-bold">
+                        Hello World!👋
                     </h1>
-                    <p className="mb-5">
+                    <p className="mt-5">
                         Welcome to my personal website. I'm Yamine Daroueche, a front-end developer.
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <button className="btn btn-primary mt-5">Get Started</button>
                 </div>
             </div>
         </div>
