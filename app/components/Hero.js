@@ -7,7 +7,7 @@ export default function Hero() {
                         Hello World!👋
                     </h1>
                     <p className="mt-5">
-                        Welcome to my personal website. I'm Yamine Daroueche, a front-end developer.
+                        Welcome to my personal website. I&apos;m Yamine Daroueche, a front-end developer.
                     </p>
                     <button className="btn btn-primary mt-5">Get Started</button>
                 </div>
