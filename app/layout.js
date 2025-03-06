@@ -7,7 +7,7 @@ const orbit = Orbit({
 });
 
 export const metadata = {
-  title: "NextJS - project 1",
+  title: "Yamine Daroueche",
   description: "",
 };
 
