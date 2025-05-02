@@ -4,7 +4,7 @@ const nextConfig = {
         return [
             {
                 source: "/portfolio/sportify/:path*",
-                destination: "https://premium251.web-hosting.com/sportify/:path*",
+                destination: "portfolio.yaminedaroueche.com/sportify/:path*",
             },
         ];
     },
