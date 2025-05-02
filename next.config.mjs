@@ -4,7 +4,7 @@ const nextConfig = {
         return [
             {
                 source: "/portfolio/sportify/:path*",
-                destination: "portfolio.yaminedaroueche.com/sportify/:path*",
+                destination: "https://portfolio.yaminedaroueche.com/sportify/:path*",
             },
         ];
     },
