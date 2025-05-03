@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async rewrites() {
+    async redirects() {
         return [
-            {
-                source: "/portfolio/sportify/:path*",
-                destination: "https://portfolio.yaminedaroueche.com/sportify/:path*",
+            { 
+                // this is to redirect "yaminedaroueche.com/portfolio/sportify"
+                // to "https://portfolio.mydomain.com/sportify" with a permanent 301 redirect
+                source: "/portfolio/sportify",
+                destination: "https://portfolio.yaminedaroueche.com/sportify",
+                permanent: true,
             },
         ];
     },
