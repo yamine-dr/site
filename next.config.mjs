@@ -4,7 +4,7 @@ const nextConfig = {
         return [
             { 
                 // this is to redirect "yaminedaroueche.com/portfolio/sportify"
-                // to "https://portfolio.mydomain.com/sportify" with a permanent 301 redirect
+                // to "https://portfolio.yaminedaroueche.com/sportify" with a permanent 301 redirect
                 source: "/portfolio/sportify",
                 destination: "https://portfolio.yaminedaroueche.com/sportify",
                 permanent: true,

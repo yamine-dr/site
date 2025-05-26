@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${orbit.className} antialiased`}
-      >
+      > 
         {children}
       </body>
     </html>
