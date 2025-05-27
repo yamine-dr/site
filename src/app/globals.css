@@ -1,6 +1,61 @@
 @import "tailwindcss";
+@theme {
+  /* Brown colors palette: https://coolors.co/dbaca9-bd6761-90423c-5e2b27-3a1a18 */
+  --color-brown-100: #dbaca9;
+  --color-brown-200: #bd6761;
+  --color-brown-300: #90423c;
+  --color-brown-400: #5e2b27;
+  --color-brown-500: #3a1a18;
+
+  --color-beige-content: #f6e2cb;
+
+  /* Animations */
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
+  }
+  
+  --animate-wave: wave 2s ease-in infinite;
+  @keyframes wave {
+    0% {
+      transform-origin: 70% 70%;
+      transform: rotate(0deg);
+    }
+    10% {
+      transform-origin: 70% 70%;
+      transform: rotate(14deg);
+    }
+    20% {
+      transform-origin: 70% 70%;
+      transform: rotate(-8deg);
+    }
+    30% {
+      transform-origin: 70% 70%;
+      transform: rotate(14deg);
+    }
+    40% {
+      transform-origin: 70% 70%;
+      transform: rotate(-4deg);
+    }
+    50% {
+      transform-origin: 70% 70%;
+      transform: rotate(10deg);
+    }
+    60% {
+      transform-origin: 70% 70%;
+      transform: rotate(0deg);
+    }
+    100% {
+      transform-origin: 70% 70%;
+      transform: rotate(0deg);
+    }
+  }
+}
+
 @plugin "daisyui" {
-  themes: light --default /* dark --prefersdark */;
+  themes: light --default, dark --prefersdark;
 }
 
 /* :root {
