@@ -44,6 +44,7 @@ export default function Projects() {
               <p>
                 I'm currently working on a new version of the website of AS Panazol, 
                 a french semi-pro a football club.
+                <br />
                 Work in progress...
               </p>
             )}

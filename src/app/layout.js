@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/layout/Header";
 
 const SpaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
   weight: "400",
 });
 

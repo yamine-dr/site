@@ -5,19 +5,21 @@ import CTAButton from "../ui/buttons/ButtonCTA"
 /**
  * Navigation link component for the header
  */
-const NavLink = ({ children, to = "#" }) => {
+const NavLink = ({ to = "#", onClick = () => {}, children }) => {
   return (
-    <a
-      href={to}
+    <button
+      onClick={onClick}
       className="max-lg:mx-auto lg:my-auto w-fit text-center max-lg:text-base-content hover:text-gray-500 hover:underline transition-colors"
     >
-      {children}
-    </a>
+      <a href={to}>
+        {children}
+      </a>
+    </button>
   )
 }
 
 /**
- * Header component with navigation and CTA button
+ * Header component with navbar and CTA button
  */
 export default function Header() {
   const [showNavMenu, setShowNavMenu] = useState(false)
@@ -29,7 +31,7 @@ export default function Header() {
   return (
     <div className="navbar py-3 bg-base-100 border-b-[0.5px] justify-between">
       <div className="navbar-start">
-        <h2 className="self-stretch my-auto text-3xl font-bold text-center">
+        <h2 className="self-stretch my-auto text-xl md:text-3xl font-bold text-center">
           Yamine Daroueche
         </h2>
       </div>
@@ -68,18 +70,10 @@ export default function Header() {
             </svg>
           </button>
           <div className="pt-20 h-[70vh] flex flex-col gap-6 text-2xl">
-            <button onClick={toggleNavMenu} className="mx-auto w-fit">
-              <NavLink to="/">Home</NavLink>
-            </button>
-            <button onClick={toggleNavMenu} className="mx-auto w-fit">
-              <NavLink to="#about">About</NavLink>
-            </button>
-            <button onClick={toggleNavMenu} className="mx-auto w-fit">
-              <NavLink to="#projects">Projects</NavLink>
-            </button>
-            <button onClick={toggleNavMenu} className="mx-auto hover:animate-wiggle">
-              <CTAButton>Contact</CTAButton>
-            </button>
+            <NavLink to="/" onClick={toggleNavMenu}>Home</NavLink>
+            <NavLink to="#about" onClick={toggleNavMenu}>About</NavLink>
+            <NavLink to="#projects" onClick={toggleNavMenu}>Projects</NavLink>
+            <CTAButton onClick={toggleNavMenu}>Contact</CTAButton>
           </div>
         </div>
       )}

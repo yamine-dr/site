@@ -1,17 +1,13 @@
 "use client"
+import Section from "../layout/Section"
 import ButtonCTA from "../ui/buttons/ButtonCTA"
 import ButtonSecondary from "../ui/buttons/ButtonSecondary"
-import { motion } from "motion/react"
 
 export default function Hero() {
   return (
-    <motion.section
-      initial={{ opacity: 0, scale: 0.6 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{
-        duration: 0.6,
-        scale: { type: "spring", visualDuration: 0.6, bounce: 0.5 },
-      }}
+    <Section
+      id="Hero"
+      animation="onMount"
       className="mt-6 px-[10%] py-20 w-full flex flex-col justify-center max-md:px-5 max-md:max-w-full"
     >
       <div className="flex flex-col justify-center w-full max-md:max-w-full">
@@ -29,10 +25,10 @@ export default function Hero() {
           </p>
         </div>
         <div className="flex gap-10 justify-center items-center self-center mt-6 max-w-full text-2xl whitespace-nowrap w-[465px]">
-          <ButtonSecondary>Projects</ButtonSecondary>
+          <ButtonSecondary to="#projects">Projects</ButtonSecondary>
           <ButtonCTA>Contact</ButtonCTA>
         </div>
       </div>
-    </motion.section>
+    </Section>
   )
 }

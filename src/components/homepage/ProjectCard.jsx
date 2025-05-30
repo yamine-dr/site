@@ -5,12 +5,12 @@ import Link from "next/link"
 
 export default function ProjectCard({
   title = "Project title",
-  description = (<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum quam doloribus, at officiis temporibus explicabo, esse illo minima ut exercitationem eius earum vitae sint quos, dignissimos nostrum nulla consequatur repudiandae!</p>),
+  description,
   imageURL = Placeholder,
   imageAlt = "",
   techStackIcons = ["React", "Tailwind CSS"],
   gitHubRepoURL = "https://github.com/",
-  projectURL = "/"
+  projectURL = "/#projects"
 }) {
   return (
   <article className="flex flex-col flex-1 shrink gap-5 basis-0 min-w-60 max-md:max-w-full">
