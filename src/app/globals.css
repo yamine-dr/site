@@ -7,8 +7,6 @@
   --color-brown-400: #5e2b27;
   --color-brown-500: #3a1a18;
 
-  --color-beige-content: #f6e2cb;
-
   /* Animations */
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   @keyframes wiggle {

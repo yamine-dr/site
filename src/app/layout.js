@@ -1,8 +1,8 @@
-import { Orbit } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Header from "../components/layout/Header";
 
-const orbit = Orbit({
-  subsets: ["latin"],
+const SpaceGrotesk = Space_Grotesk({
   weight: "400",
 });
 
@@ -13,10 +13,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${orbit.className} antialiased`}
-      > 
+        className={`${SpaceGrotesk.className} antialiased`}
+      >
+        <Header/>
+
         {children}
       </body>
     </html>

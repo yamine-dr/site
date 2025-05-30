@@ -1,14 +1,15 @@
 "use client"
+import { useState } from "react"
 import CTAButton from "../ui/buttons/ButtonCTA"
 
 /**
  * Navigation link component for the header
  */
-const NavLink = ({ children }) => {
+const NavLink = ({ children, to = "#" }) => {
   return (
     <a
-      href="#"
-      className="gap-2.5 self-stretch my-auto hover:text-gray-500 hover:underline transition-colors"
+      href={to}
+      className="max-lg:mx-auto lg:my-auto w-fit text-center max-lg:text-base-content hover:text-gray-500 hover:underline transition-colors"
     >
       {children}
     </a>
@@ -19,43 +20,69 @@ const NavLink = ({ children }) => {
  * Header component with navigation and CTA button
  */
 export default function Header() {
+  const [showNavMenu, setShowNavMenu] = useState(false)
+
+  const toggleNavMenu = () => {
+    setShowNavMenu(!showNavMenu)
+  }
+
   return (
-    <div className="navbar bg-base-100 border-b-[0.5px] justify-between">
+    <div className="navbar py-3 bg-base-100 border-b-[0.5px] justify-between">
       <div className="navbar-start">
-        <h1 className="self-stretch my-auto text-3xl font-bold text-center">
+        <h2 className="self-stretch my-auto text-3xl font-bold text-center">
           Yamine Daroueche
-        </h1>
+        </h2>
       </div>
-      <div className="border navbar-end w-fit lg:w-[80%]">
+      <div className="navbar-end w-fit lg:w-[750px]">
         <div className="hidden lg:flex p-0 justify-between text-2xl w-full">
-          <NavLink>Home</NavLink>
-          <NavLink>About</NavLink>
-          <NavLink>Projects</NavLink>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="#about">About</NavLink>
+          <NavLink to="#projects">Projects</NavLink>
           <CTAButton>Contact</CTAButton>
         </div>
 
-        <button className="btn btn-ghost lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+        <button onClick={toggleNavMenu} className="lg:hidden btn text-base-content bg-transparent border-0 shadow-none transition-transform">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="27"
+            height="27"
+            fill="none"
+            viewBox="0 0 45 27"
+            className="text-inherit"
+          >
+            <path
+              stroke="currentColor"
+              strokeWidth="2"
+              d="M0 1.5h45M0 13.5h45M0 25.5h45"
+            ></path>
+          </svg>
         </button>
       </div>
-    </div>
 
-    // <header
-    //   className="flex overflow-hidden flex-wrap gap-10 justify-between items-center px-8 py-5 whitespace-nowrap bg-base-100 border-b-[0.8px] max-md:px-5"
-    // >
-    //   <h1
-    //     className="self-stretch my-auto text-3xl font-bold text-center"
-    //   >
-    //     Yamine Daroueche
-    //   </h1>
-    //   <nav className="border navbar my-auto p-0 min-h-fit w-fit lg:w-[60%]">
-    //     <div className="hidden lg:flex justify-between text-2xl w-full">
-    //       <NavLink>Home</NavLink>
-    //       <NavLink>About</NavLink>
-    //       <NavLink>Projects</NavLink>
-    //       <CTAButton>Contact</CTAButton>
-    //     </div>
-    //   </nav>
-    // </header>
+      {/* NavMenu (tablet/phone viewport) */}
+      {showNavMenu && (
+        <div className="lg:hidden border-b fixed z-1 top-0 left-0 w-full h-[80vh] flex flex-col justify-between bg-base-100">
+          <button onClick={toggleNavMenu} className="btn mt-3 me-3 p-0 w-fit self-end text-base-content bg-transparent border-0 shadow-none transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor" className="size-9">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div className="pt-20 h-[70vh] flex flex-col gap-6 text-2xl">
+            <button onClick={toggleNavMenu} className="mx-auto w-fit">
+              <NavLink to="/">Home</NavLink>
+            </button>
+            <button onClick={toggleNavMenu} className="mx-auto w-fit">
+              <NavLink to="#about">About</NavLink>
+            </button>
+            <button onClick={toggleNavMenu} className="mx-auto w-fit">
+              <NavLink to="#projects">Projects</NavLink>
+            </button>
+            <button onClick={toggleNavMenu} className="mx-auto hover:animate-wiggle">
+              <CTAButton>Contact</CTAButton>
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   )
 }
