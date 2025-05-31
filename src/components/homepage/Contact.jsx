@@ -1,8 +1,16 @@
 "use client"
+import { useActionState } from "react"
 import Section from "../layout/Section"
-import { motion } from "motion/react"
+import { submitContactForm } from "@/src/app/actions"
 
 export default function Contact() {
+  const [formState, formAction, isLoading] = useActionState(submitContactForm, {
+    name: "",
+    email: "",
+    message: "",
+    response: ""
+  })
+
   return (
     <Section
       id="contact"
@@ -18,7 +26,12 @@ export default function Contact() {
         </div>
       </div>
 
-      <form action="" method="POST" className="mt-6 flex max-md:flex-col gap-15 max-md:gap-5 justify-center">
+      {/* FORM */}
+      {formState.response}
+      <form
+        action={formAction}
+        className="mt-6 flex max-md:flex-col gap-15 max-md:gap-5 justify-center"
+      >
         {/* Form's left part (name, email) */}
         <div className="flex flex-col gap-5 flex-1">
           <div>
@@ -27,6 +40,7 @@ export default function Contact() {
                 type="text"
                 id="name"
                 name="name"
+                defaultValue={formState.name}
                 className="mt-1 input w-full"
                 autoComplete="on"
                 required
@@ -51,6 +65,7 @@ export default function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  defaultValue={formState.email}
                   placeholder="mail@site.com"
                   autoComplete="on"
                   required
@@ -66,6 +81,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 name="message"
+                defaultValue={formState.message}
                 className="mt-1 textarea w-full"
                 rows="5"
                 placeholder="Enter your messsage here"
@@ -73,7 +89,12 @@ export default function Contact() {
               ></textarea>
           </div>
           <div className="self-end w-1/2">
-              <button type="submit" className="btn text-base-100 bg-base-content w-full">Submit</button>
+              <button
+                type="submit"
+                className={`btn ${isLoading ? "btn-disabled" : ""} text-base-100 bg-base-content w-full`}
+              >
+                Submit
+              </button>
           </div>
         </div>
       </form>

@@ -18,7 +18,7 @@ export default function Hero() {
           <div className="flex flex-col justify-center items-center py-2.5 mt-6 w-full max-md:max-w-full">
             <hr className="max-w-full border border-solid bg-base-content border-base-content min-h-px w-[263px]" />
           </div>
-          <p className="flex-1 shrink gap-2.5 self-stretch px-12 py-2.5 mt-6 w-full text-lg text-center basis-0 max-md:px-5 max-md:max-w-full">
+          <p className="flex-1 shrink gap-2.5 self-stretch px-12 py-2.5 mt-6 w-full text-2xl max-md:text-lg text-center basis-0 max-md:px-5 max-md:max-w-full">
             Hello World! <span className="inline-block animate-wave">👋</span>
             <br />
             I&apos;m Yamine Daroueche, a French front-end Web developer.
