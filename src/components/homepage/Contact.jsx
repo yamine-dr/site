@@ -26,14 +26,25 @@ export default function Contact() {
         </div>
       </div>
 
+      {isLoading ? 
+        <div className="mt-4 py-1 w-full flex justify-center text-center text-base-100 bg-info rounded-md">
+          <svg className="mr-2 size-5 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25 text-base-100" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75 text-base-100" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Loading...
+        </div>
+        :
+        formState.response
+      }
       {/* FORM */}
-      {formState.response}
       <form
         action={formAction}
         className="mt-6 flex max-md:flex-col gap-15 max-md:gap-5 justify-center"
       >
-        {/* Form's left part (name, email) */}
+        {/* Name and Email inputs */}
         <div className="flex flex-col gap-5 flex-1">
+          {/* Name input group */}
           <div>
               <label htmlFor="name">Name</label><br />
               <input
@@ -46,6 +57,7 @@ export default function Contact() {
                 required
               />
           </div>
+          {/* Email input group */}
           <div>
               <label htmlFor="email">Email</label><br />
               <div className="input validator w-full">
@@ -74,8 +86,9 @@ export default function Contact() {
               <div className="validator-hint hidden">Enter valid email address</div>
           </div>
         </div>
-        {/* Form's right part (message, submit) */}
+        {/* Message input and Submit button */}
         <div className="flex flex-col gap-5 flex-1">
+          {/* Message input group */}
           <div>
               <label htmlFor="message">Your message</label><br />
               <textarea
@@ -88,10 +101,12 @@ export default function Contact() {
                 autoComplete="off"
               ></textarea>
           </div>
-          <div className="self-end w-1/2">
+          {/* Submit button */}
+          <div className="self-end max-md:w-full w-1/2">
               <button
                 type="submit"
-                className={`btn ${isLoading ? "btn-disabled" : ""} text-base-100 bg-base-content w-full`}
+                className={`btn ${isLoading ? "btn-disabled" : ""} text-base-100 bg-base-content hover:scale-105 focus:scale-110 transition-transform w-full`}
+                disabled={isLoading}
               >
                 Submit
               </button>
