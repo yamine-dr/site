@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Placeholder from "@/src/assets/images/project-placeholder.png"
 import TechStackIcon from "../ui/icons/TechStackIcon"
@@ -12,6 +13,7 @@ export default function ProjectCard({
   gitHubRepoURL = "https://github.com/",
   projectURL = "/#projects"
 }) {
+  const t = useTranslations("Projects.card")
   return (
   <article className="flex flex-col flex-1 shrink gap-5 basis-0 min-w-60 max-md:max-w-full">
     <Image 
@@ -33,7 +35,14 @@ export default function ProjectCard({
     </div>
 
     <div className="flex gap-4 justify-start text-center whitespace-nowrap">
-      <Link className="hover:scale-110 transition-transform" href={gitHubRepoURL} target="_blank" rel="noopener noreferrer">
+      {/* GitHub link and icon */}
+      <Link
+        className="hover:scale-110 transition-transform"
+        title={t("githubURLTitle", {projectTitle: title})}
+        href={gitHubRepoURL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"
@@ -48,7 +57,15 @@ export default function ProjectCard({
           ></path>
         </svg>
       </Link>
-      <Link className="hover:scale-110 transition-transform" href={projectURL} target="_blank" rel="noopener noreferrer">
+
+      {/* Project URL link and icon */}
+      <Link
+        className="hover:scale-110 transition-transform"
+        title={t("projectURLTitle", {projectTitle: title})}
+        href={projectURL}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"

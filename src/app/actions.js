@@ -1,13 +1,17 @@
 "use server";
 import nodemailer from "nodemailer";
 
+/**
+ * Submits the contact form to contact@yaminedaroueche.com using Nodemailer
+*/
 export async function submitContactForm(previousFormState, formData) {
   const name = formData.get("name");
   const email = formData.get("email");
   const message = formData.get("message");
-  let response;
+  let response = { result: "", error: "" };
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // add delay of 1s
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const transporter = nodemailer.createTransport({
     host: "premium251.web-hosting.com",
@@ -31,18 +35,11 @@ export async function submitContactForm(previousFormState, formData) {
     });
 
     console.log("Message sent:", sentMessageInfo.messageId);
-    response = (
-      <div className="mt-4 w-full text-center text-success bg-success-content border border-success rounded-md">
-        Message sent successfully!
-      </div>
-    );
+    response.result = "success";
   } catch (error) {
     console.error("Error while sending the message:", error);
-    response = (
-      <div className="mt-4 w-full text-center text-error bg-error-content border border-error rounded-md">
-        Error while sending the message: {error}
-      </div>
-    );
+    response.result = "error";
+    response.error = error;
   } finally {
     return { name, email, message, response };
   }

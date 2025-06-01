@@ -1,4 +1,5 @@
 "use client"
+import { useTranslations, useLocale } from 'next-intl'
 import { useState } from "react"
 import CTAButton from "../ui/buttons/ButtonCTA"
 
@@ -23,11 +24,12 @@ const NavLink = ({ to = "#", onClick = () => {}, children }) => {
  */
 export default function Header() {
   const [showNavMenu, setShowNavMenu] = useState(false)
-
   const toggleNavMenu = () => {
     setShowNavMenu(!showNavMenu)
   }
 
+  const t = useTranslations("Header")
+  const locale = useLocale()
   return (
     <div className="navbar py-3 bg-base-100 border-b-[0.5px] justify-between">
       <div className="navbar-start">
@@ -37,10 +39,10 @@ export default function Header() {
       </div>
       <div className="navbar-end w-fit lg:w-[750px]">
         <div className="hidden lg:flex p-0 justify-between text-2xl w-full">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="#about">About</NavLink>
-          <NavLink to="#projects">Projects</NavLink>
-          <CTAButton>Contact</CTAButton>
+          <NavLink to={`/${locale}`}>{t("home")}</NavLink>
+          <NavLink to="#about">{t("about")}</NavLink>
+          <NavLink to="#projects">{t("projects")}</NavLink>
+          <CTAButton>{t("contact")}</CTAButton>
         </div>
 
         <button onClick={toggleNavMenu} className="lg:hidden btn text-base-content bg-transparent border-0 shadow-none transition-transform">
@@ -70,10 +72,10 @@ export default function Header() {
             </svg>
           </button>
           <div className="pt-20 h-[70vh] flex flex-col gap-6 text-2xl">
-            <NavLink to="/" onClick={toggleNavMenu}>Home</NavLink>
-            <NavLink to="#about" onClick={toggleNavMenu}>About</NavLink>
-            <NavLink to="#projects" onClick={toggleNavMenu}>Projects</NavLink>
-            <CTAButton onClick={toggleNavMenu}>Contact</CTAButton>
+            <NavLink to={`/${locale}`} onClick={toggleNavMenu}>{t("home")}</NavLink>
+            <NavLink to="#about" onClick={toggleNavMenu}>{t("about")}</NavLink>
+            <NavLink to="#projects" onClick={toggleNavMenu}>{t("projects")}</NavLink>
+            <CTAButton onClick={toggleNavMenu}>{t("contact")}</CTAButton>
           </div>
         </div>
       )}

@@ -1,0 +1,66 @@
+{
+  "Header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": {
+      "part1": "Transforming Concepts into Seamless",
+      "part2": "User Experience"
+    },
+    "subtitle": "I'm Yamine Daroueche, a French front-end Web developer."
+  },
+  "About": {
+    "title": "About me",
+    "text": {
+      "part1": "I'm an enthusiastic web developer, motivated and determined to bring value to the people I work with.",
+      "part2": "Currently studying Computer Science in a Bachelor's Degree at the University of Limoges, I decided to specialise myself in JavaScript Web development."
+    },
+    "skills": "MY SKILLS"
+  },
+  "Projects": {
+    "title": "Projects",
+    "card": {
+      "githubURLTitle": "{projectTitle} project GitHub repository",
+      "projectURLTitle": "{projectTitle} project link"
+    },
+    "Sportify": {
+      "description": {
+        "part1": "Scenario (fictional): Sportify is a gym in Limoges with several locations, where different courses (pilates, cycling, etc.) are available for the public.",
+        "part2": "Visit the website, and tell me if you have any feedback or suggestion, I'll happily take them ! 😁 However, I haven't finished the mobile version.",
+        "part3": "P.S. : I developed this website with 2 university classmates. I genuinely thank them for their precious help."
+      },
+      "imageAlt": "Sportify sign-in page"
+    },
+    "ASPanazol": {
+      "description": {
+        "part1": "I'm currently working on a new version of the website of AS Panazol, a french semi-pro a football club.",
+        "part2": "Work in progress..."
+      }
+    }
+  },
+  "Contact": {
+    "title": "Contact",
+    "form": {
+      "name": {
+        "label": "Name"
+      },
+      "email": {
+        "label": "Email",
+        "validatorHint": "Enter valid email address"
+      },
+      "message": {
+        "label": "Your message",
+        "placeholder": "Enter your messsage here"
+      },
+      "submitBtnText": "Submit",
+      "loadingText": "Sending...",
+      "response": {
+        "success": "Message sent successfully!",
+        "error": "Error while sending the message:"
+      }
+    }
+  }
+}

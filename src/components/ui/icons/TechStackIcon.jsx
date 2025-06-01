@@ -320,12 +320,12 @@ const techStackIcons = {
 
 /**
  * TechStackIcon component with SVG icons:
- * CSS, Bootsrap, Tailwind CSS, React, Next.js,
- * Node.js, MySQL, PHP 
+ * - CSS, Bootsrap, Tailwind CSS, React, Next.js,
+ * - Node.js, MySQL, PHP 
  */
 export default function TechStackIcon({ icon }) {
   return (
-    <div className="flex justify-center items-center p-1 bg-white rounded-xl">
+    <div title={icon} className="flex justify-center items-center p-1 bg-white rounded-xl">
       {techStackIcons[icon]}
     </div>
   )

@@ -1,0 +1,66 @@
+{
+  "Header": {
+    "home": "Acceuil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": {
+      "part1": "Transformer des Idées en",
+      "part2": "Expérience Utilisateur Fluide"
+    },
+    "subtitle": "Je suis Yamine Daroueche, développeur Web Front-End."
+  },
+  "About": {
+    "title": "À propos",
+    "text": {
+      "part1": "Je suis un développeur optimiste, motivé et déterminé à apporté de la valeur aux personnes avec lesquelles je travaille.",
+      "part2": "Étant actuellement étudiant en 2ème année de Licence Informatique à l'Université de Limoges, je me suis spécialisé dans le développement Web orienté JavaScript."
+    },
+    "skills": "MES COMPÉTENCES"
+  },
+  "Projects": {
+    "title": "Projets",
+    "card": {
+      "githubURLTitle": "dossier GitHub du projet {projectTitle}",
+      "projectURLTitle": "Lien du projet {projectTitle}"
+    },
+    "Sportify": {
+      "description": {
+        "part1": "Scénario (fictif) : Sportify est un groupement limougeaud de salles de sport, proposant différents cours (pilates, cycling, etc.) au public.",
+        "part2": "N'hésitez pas à visiter le site. Ce premier travail n'est pas parfait, donc les retours et feedbacks seront grandement appréciés ! 😁 Par contre, je n'ai pas totalement fini de l'adapter pour téléphone. Je vais y travailler.",
+        "part3": "P.S. : j'ai développé ce site avec 2 camarades de l'université. Je tiens à les remercier particulièrement pour leur aide précieuse."
+      },
+      "imageAlt": "Page de connexion du site web de Sportify"
+    },
+    "ASPanazol": {
+      "description": {
+        "part1": "Je travaille actuellement sur une nouvelle version du site de l'AS Panazol, un club de football français semi-professionnel.",
+        "part2": "Développement en cours..."
+      }
+    }
+  },
+  "Contact": {
+    "title": "Contact",
+    "form": {
+      "name": {
+        "label": "Nom"
+      },
+      "email": {
+        "label": "Mail",
+        "validatorHint": "Entrez une adresse mail valide"
+      },
+      "message": {
+        "label": "Votre message",
+        "placeholder": "Entrez votre message ici"
+      },
+      "submitBtnText": "Envoyer",
+      "loadingText": "Envoi...",
+      "response": {
+        "success": "Message envoyé !",
+        "error": "Erreur lors de l'envoi du message :"
+      }
+    }
+  }
+}
