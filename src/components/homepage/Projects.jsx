@@ -33,7 +33,7 @@ export default function Projects() {
             )}
             imageURL={SportifyBanner}
             imageAlt={t("Sportify.imageAlt")}
-            techStackIcons={["PHP", "CSS", "Bootstrap", "MySQL"]}
+            techStackIcons={["PHP", "Bootstrap", "CSS", "MySQL"]}
             gitHubRepoURL="https://github.com/yamine-dr/sportify"
             projectURL="https://yaminedaroueche.com/portfolio/sportify"
           />

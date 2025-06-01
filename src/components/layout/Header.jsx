@@ -1,5 +1,6 @@
 "use client"
 import { useTranslations, useLocale } from 'next-intl'
+import { redirect } from '@/src/i18n/navigation'
 import { useState } from "react"
 import CTAButton from "../ui/buttons/ButtonCTA"
 
@@ -36,6 +37,23 @@ export default function Header() {
         <h2 className="self-stretch my-auto text-xl md:text-3xl font-bold text-center">
           Yamine Daroueche
         </h2>
+
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <details>
+              <summary>
+                {/* Languages icon */}
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802" />
+                </svg>
+              </summary>
+              <ul className="p-1 w-fit flex flex-col items-center rounded-t-none">
+                <li><button onClick={() => redirect({href: "/", locale: "fr"})}>FR</button></li>
+                <li><button onClick={() => redirect({href: "/", locale: "en"})}>EN</button></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
       </div>
       <div className="navbar-end w-fit lg:w-[750px]">
         <div className="hidden lg:flex p-0 justify-between text-2xl w-full">
@@ -45,6 +63,7 @@ export default function Header() {
           <CTAButton>{t("contact")}</CTAButton>
         </div>
 
+        {/* NavMenu toggler (hidden on large viewport) */}
         <button onClick={toggleNavMenu} className="lg:hidden btn text-base-content bg-transparent border-0 shadow-none transition-transform">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +82,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* NavMenu (tablet/phone viewport) */}
+      {/* NavMenu (hidden on large viewport) */}
       {showNavMenu && (
         <div className="lg:hidden border-b fixed z-1 top-0 left-0 w-full h-[80vh] flex flex-col justify-between bg-base-100">
           <button onClick={toggleNavMenu} className="btn mt-3 me-3 p-0 w-fit self-end text-base-content bg-transparent border-0 shadow-none transition-transform">
