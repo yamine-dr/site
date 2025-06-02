@@ -1,5 +1,5 @@
-export const locales = ['en', 'fr']; // Supported locales
-export const localesFullWritten = {
+export const locales = ['en', 'fr']; // all available locales
+export const localesFullyWritten = {
     en: "English",
     fr: "Français",
 };

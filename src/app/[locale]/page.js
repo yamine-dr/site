@@ -1,9 +1,8 @@
-"use server";
-import { getLocale } from 'next-intl/server';
-import { redirect } from 'next/navigation';
+import { useLocale } from 'next-intl';
+import { redirect } from '@/src/i18n/navigation';
  
-// Redirect the user to the default locale when `/` is requested
-export default async function RootPage() {
-  const locale = await getLocale();
-  redirect(`/${locale}/portfolio`);
+// Redirect the user to  "/[locale]/portfolio" when '/' is requested
+export default function RootPage() {
+  const locale = useLocale();
+  redirect({href: "/portfolio", locale: locale});
 }

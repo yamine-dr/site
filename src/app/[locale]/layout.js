@@ -1,7 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/src/i18n/routing';
-
+ 
 import { Space_Grotesk } from "next/font/google";
 import "@/src/app/globals.css";
 
@@ -15,7 +15,7 @@ export const metadata = {
   description: "",
 };
 
-export default async function LocaleLayout({
+export default async function RootLayout({
   children,
   params
 }) {
