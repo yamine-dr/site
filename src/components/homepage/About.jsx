@@ -24,7 +24,7 @@ export default function About() {
 
       <div className="flex-col justify-center items-center mt-8">
         <h4 className="text-center">
-          {t("skills")}
+          {t("techStack")}
         </h4>
         <div className="flex gap-7 justify-center mt-4 text-center whitespace-nowrap">
           <TechStackIcon icon="Next.js"/>

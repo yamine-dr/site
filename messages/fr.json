@@ -8,7 +8,7 @@
   "Hero": {
     "title": {
       "part1": "Transformer des Idées en",
-      "part2": "Expérience Utilisateur Fluide"
+      "part2": "Interfaces Fluides"
     },
     "subtitle": "Je suis Yamine Daroueche, développeur Web Front-End."
   },
@@ -18,7 +18,7 @@
       "part1": "Je suis un développeur optimiste, motivé et déterminé à apporté de la valeur aux personnes avec lesquelles je travaille.",
       "part2": "Étant actuellement étudiant en 2ème année de Licence Informatique à l'Université de Limoges, je me suis spécialisé dans le développement Web orienté JavaScript."
     },
-    "skills": "MES COMPÉTENCES"
+    "techStack": "MON TECH STACK"
   },
   "Projects": {
     "title": "Projets",

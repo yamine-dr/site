@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/src/i18n/routing';
 
 import { Space_Grotesk } from "next/font/google";
-import "../globals.css";
+import "@/src/app/globals.css";
 
 const SpaceGrotesk = Space_Grotesk({
   subsets: ["latin"],

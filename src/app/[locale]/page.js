@@ -1,20 +1,9 @@
-import Header from "@/src/components/layout/Header";
-import Hero from "../../components/homepage/Hero";
-import About from "../../components/homepage/About";
-import Projects from "../../components/homepage/Projects";
-import Contact from "../../components/homepage/Contact";
-
-export default function HomePage() {
-  return (
-    <>
-      <Header/>
-
-      <main>
-        <Hero/>
-        <About/>
-        <Projects/>
-        <Contact/>
-      </main>
-    </>
-  );
+"use server";
+import { getLocale } from 'next-intl/server';
+import { redirect } from 'next/navigation';
+ 
+// Redirect the user to the default locale when `/` is requested
+export default async function RootPage() {
+  const locale = await getLocale();
+  redirect(`/${locale}/portfolio`);
 }
