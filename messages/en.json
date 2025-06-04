@@ -27,6 +27,7 @@
       "projectURLTitle": "{projectTitle} project link"
     },
     "Sportify": {
+      "title": "Sportify (with MVC model)",
       "description": {
         "part1": "Scenario (fictional): Sportify is a gym in Limoges with several locations, where different courses (pilates, cycling, etc.) are available for the public.",
         "part2": "Visit the website, and tell me if you have any feedback or suggestion, I'll happily take them ! 😁 However, I haven't finished the mobile version.",
@@ -35,6 +36,7 @@
       "imageAlt": "Sportify sign-in page"
     },
     "ASPanazol": {
+      "title": "AS Panazol",
       "description": {
         "part1": "I'm currently working on a new version of the website of AS Panazol, a french semi-pro a football club.",
         "part2": "Work in progress..."
@@ -61,6 +63,11 @@
         "success": "Message sent successfully!",
         "error": "Error while sending the message:"
       }
+    }
+  },
+  "Footer": {
+    "socialMedia": {
+      "iconTitle": "my {socialMedia}"
     }
   }
 }

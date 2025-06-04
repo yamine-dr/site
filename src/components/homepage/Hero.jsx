@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="flex flex-col justify-center w-full max-md:max-w-full">
         <div className="flex flex-col justify-center w-full max-md:max-w-full">
           <h1 className="flex-1 shrink gap-2.5 self-stretch mx-auto py-2.5 w-full lg:w-[80%] text-5xl text-center basis-0 max-md:max-w-full max-md:text-4xl">
-            {t("Hero.title.part1")} <span className="text-brown-200 font-bold">{t("Hero.title.part2")}</span>
+            {t("Hero.title.part1")} <span className="text-newgreen-100 font-bold">{t("Hero.title.part2")}</span>
           </h1>
           <div className="flex flex-col justify-center items-center py-2.5 mt-6 w-full max-md:max-w-full">
             <hr className="max-w-full border border-solid bg-base-content border-base-content min-h-px w-[263px]" />

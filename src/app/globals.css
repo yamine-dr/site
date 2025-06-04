@@ -7,14 +7,14 @@
   --color-brown-400: #5e2b27;
   --color-brown-500: #3a1a18;
 
+  /* "new green" colors palette: https://coolors.co/68ca7c-40b557-359749-256a33-11270b */
+  --color-newgreen-100: #68ca7c;
+  --color-newgreen-200: #40b557;
+  --color-newgreen-300: #359749;
+  --color-newgreen-400: #256a33;
+  --color-newgreen-500: #11270b;
+
   /* Animations */
-  --animate-wiggle: wiggle 1s ease-in-out infinite;
-  @keyframes wiggle {
-    0%,
-    100% { transform: rotate(-4deg); }
-    50% { transform: rotate(4deg); }
-  }
-  
   --animate-wave: wave 2s ease-in infinite;
   @keyframes wave {
     0% {

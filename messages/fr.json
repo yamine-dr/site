@@ -7,8 +7,8 @@
   },
   "Hero": {
     "title": {
-      "part1": "Transformer des Idées en",
-      "part2": "Interfaces Fluides"
+      "part1": "Passer de l'idée à une",
+      "part2": "Interface Fluide"
     },
     "subtitle": "Je suis Yamine Daroueche, développeur Web Front-End."
   },
@@ -27,6 +27,7 @@
       "projectURLTitle": "Lien du projet {projectTitle}"
     },
     "Sportify": {
+      "title": "Sportify (modèle MVC)",
       "description": {
         "part1": "Scénario (fictif) : Sportify est un groupement limougeaud de salles de sport, proposant différents cours (pilates, cycling, etc.) au public.",
         "part2": "N'hésitez pas à visiter le site. Ce premier travail n'est pas parfait, donc les retours et feedbacks seront grandement appréciés ! 😁 Par contre, je n'ai pas totalement fini de l'adapter pour téléphone. Je vais y travailler.",
@@ -35,6 +36,7 @@
       "imageAlt": "Page de connexion du site web de Sportify"
     },
     "ASPanazol": {
+      "title": "AS Panazol",
       "description": {
         "part1": "Je travaille actuellement sur une nouvelle version du site de l'AS Panazol, un club de football français semi-professionnel.",
         "part2": "Développement en cours..."
@@ -61,6 +63,11 @@
         "success": "Message envoyé !",
         "error": "Erreur lors de l'envoi du message :"
       }
+    }
+  },
+  "Footer": {
+    "socialMedia": {
+      "iconTitle": "mon {socialMedia}"
     }
   }
 }

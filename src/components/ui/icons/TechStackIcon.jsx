@@ -1,6 +1,6 @@
 const iconSize = 40
 
-const css = (
+const cssSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
@@ -25,7 +25,7 @@ const css = (
   </svg>
 )
 
-const bootstrap = (
+const bootstrapSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
@@ -40,7 +40,7 @@ const bootstrap = (
   </svg>
 )
 
-const tailwindcss = (
+const tailwindcssSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
@@ -54,7 +54,7 @@ const tailwindcss = (
   </svg>
 )
 
-const react = (
+const reactSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
@@ -67,7 +67,7 @@ const react = (
   </svg>
 )
 
-const nextjs = (
+const nextjsSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
@@ -79,7 +79,7 @@ const nextjs = (
   </svg>
 )
 
-const nodejs = (
+const nodejsSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -243,7 +243,7 @@ const nodejs = (
   </svg>
 )
 
-const mysql = (
+const mysqlSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
@@ -273,7 +273,7 @@ const mysql = (
   </svg>
 )
 
-const php = (
+const phpSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={iconSize}
@@ -308,18 +308,18 @@ const php = (
 )
 
 const techStackIcons = {
-  "CSS": css,
-  "Bootstrap": bootstrap,
-  "Tailwind CSS": tailwindcss,
-  "React": react,
-  "Next.js": nextjs,
-  "Node.js": nodejs,
-  "MySQL": mysql,
-  "PHP": php,
+  "CSS": cssSvg,
+  "Bootstrap": bootstrapSvg,
+  "Tailwind CSS": tailwindcssSvg,
+  "React": reactSvg,
+  "Next.js": nextjsSvg,
+  "Node.js": nodejsSvg,
+  "MySQL": mysqlSvg,
+  "PHP": phpSvg,
 }
 
 /**
- * TechStackIcon component with SVG icons:
+ * TechStackIcon component with SVG icons of:
  * - CSS, Bootsrap, Tailwind CSS, React, Next.js,
  * - Node.js, MySQL, PHP 
  */

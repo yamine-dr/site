@@ -21,7 +21,7 @@ export default function Projects() {
       <div className="flex flex-col justify-center mt-6 w-full max-w-[1101px] max-md:max-w-full">
         <div className="flex flex-wrap gap-10 items-start w-full max-md:max-w-full">
           <ProjectCard
-            title="Sportify"
+            title={t("Sportify.title")}
             description={(
               <p>
                 {t("Sportify.description.part1")}
@@ -38,7 +38,7 @@ export default function Projects() {
             projectURL="https://yaminedaroueche.com/portfolio/sportify"
           />
           <ProjectCard
-            title="AS Panazol"
+            title={t("ASPanazol.title")}
             description={(
               <p>
                 {t("ASPanazol.description.part1")}
