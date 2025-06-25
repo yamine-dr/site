@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Placeholder from "@/src/assets/images/project-placeholder.png"
 import TechStackIcon from "../ui/icons/TechStackIcon"
-import Link from "next/link"
 
 export default function ProjectCard({
   title,
@@ -23,7 +22,18 @@ export default function ProjectCard({
     />
 
     <h3 className="text-2xl">
-      {title}
+      {projectURL !== undefined ?
+        (<a
+          className="hover:underline"
+          href={projectURL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {title}
+        </a>)
+        :
+        title
+      }
     </h3>
 
     <hr className="w-full"/>

@@ -27,18 +27,17 @@
       "projectURLTitle": "{projectTitle} project link"
     },
     "Sportify": {
-      "title": "Sportify (with MVC model)",
+      "title": "Sportify",
       "description": {
         "part1": "Scenario (fictional): Sportify is a gym in Limoges with several locations, where different courses (pilates, cycling, etc.) are available for the public.",
-        "part2": "Visit the website, and tell me if you have any feedback or suggestion, I'll happily take them ! 😁 However, I haven't finished the mobile version.",
-        "part3": "P.S. : I developed this website with 2 university classmates. I genuinely thank them for their precious help."
+        "part2": "This project was coded in pure PHP (without Framework). I used the MVC (Model-View-Controller) architecture for better code organization."
       },
       "imageAlt": "Sportify sign-in page"
     },
-    "ASPanazol": {
-      "title": "AS Panazol",
+    "Blog": {
+      "title": "My blog",
       "description": {
-        "part1": "I'm currently working on a new version of the website of AS Panazol, a french semi-pro a football club.",
+        "part1": "I'm currently working on a blog, where I will share my learning journey in Web development.",
         "part2": "Work in progress..."
       }
     }

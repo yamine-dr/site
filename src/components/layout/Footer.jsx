@@ -16,7 +16,12 @@ export default function Footer() {
             </div>
         </aside>
         <div className="pb-10">
-          <a href="mailto:contact@yaminedaroueche.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="mailto:contact@yaminedaroueche.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
             contact@yaminedaroueche.com
           </a>
         </div>

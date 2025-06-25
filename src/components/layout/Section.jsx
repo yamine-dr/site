@@ -6,7 +6,7 @@ import { motion } from "motion/react"
  * 2. animation = "onMount": section animated once when page loads 
  * 3. animation = "onView": section animated every time the section appears in the viewport 
  */
-export default function Section({ id = "", animation = null, children }) {
+export default function Section({ id = "", animation = undefined, children }) {
   let Section
   switch (animation) {
     case "onMount":
@@ -46,7 +46,7 @@ export default function Section({ id = "", animation = null, children }) {
     default:
       Section = (
         <section id={id} className="mt-6 px-[10%] py-20 w-full flex flex-col justify-center max-md:px-5 max-md:max-w-full">
-            {children}
+          {children}
         </section>
       )
       break;

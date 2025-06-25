@@ -27,18 +27,17 @@
       "projectURLTitle": "Lien du projet {projectTitle}"
     },
     "Sportify": {
-      "title": "Sportify (modèle MVC)",
+      "title": "Sportify",
       "description": {
         "part1": "Scénario (fictif) : Sportify est un groupement limougeaud de salles de sport, proposant différents cours (pilates, cycling, etc.) au public.",
-        "part2": "N'hésitez pas à visiter le site. Ce premier travail n'est pas parfait, donc les retours et feedbacks seront grandement appréciés ! 😁 Par contre, je n'ai pas totalement fini de l'adapter pour téléphone. Je vais y travailler.",
-        "part3": "P.S. : j'ai développé ce site avec 2 camarades de l'université. Je tiens à les remercier particulièrement pour leur aide précieuse."
+        "part2": "Ce projet a été réalisé en pure PHP (c'est-à-dire sans Framework). J'ai utilisé l'architecture MVC (Modèle-Vue-Controleur) pour une meilleure organisation du code."
       },
       "imageAlt": "Page de connexion du site web de Sportify"
     },
-    "ASPanazol": {
-      "title": "AS Panazol",
+    "Blog": {
+      "title": "Mon blog",
       "description": {
-        "part1": "Je travaille actuellement sur une nouvelle version du site de l'AS Panazol, un club de football français semi-professionnel.",
+        "part1": "Je travaille actuellement sur un blog technique sur le développement Web, que je compte alimenter en parallèle de mon aprentissage.",
         "part2": "Développement en cours..."
       }
     }

@@ -2,7 +2,7 @@
 import { useTranslations } from "next-intl"
 import Section from "../layout/Section"
 import ProjectCard from "./ProjectCard"
-import SportifyBanner from "@/src/assets/images/sportify-banner.png"
+import SportifyBanner from "@/src/assets/images/project-sportify.png"
 
 
 export default function Projects() {
@@ -27,8 +27,6 @@ export default function Projects() {
                 {t("Sportify.description.part1")}
                 <br />
                 {t("Sportify.description.part2")}
-                <br /><br />
-                {t("Sportify.description.part3")}
               </p>
             )}
             imageURL={SportifyBanner}
@@ -38,15 +36,15 @@ export default function Projects() {
             projectURL="https://yaminedaroueche.com/portfolio/sportify"
           />
           <ProjectCard
-            title={t("ASPanazol.title")}
+            title={t("Blog.title")}
             description={(
               <p>
-                {t("ASPanazol.description.part1")}
+                {t("Blog.description.part1")}
                 <br />
-                {t("ASPanazol.description.part2")}
+                {t("Blog.description.part2")}
               </p>
             )}
-            techStackIcons={["React", "Tailwind CSS", "Node.js", "MySQL"]}
+            techStackIcons={["Next.js", "MDX", "Tailwind CSS"]}
           />
         </div>
       </div>

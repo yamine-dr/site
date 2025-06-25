@@ -67,6 +67,21 @@ const reactSvg = (
   </svg>
 )
 
+const mdxSvg = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={iconSize}
+    height={iconSize}
+    viewBox="0 0 32 32"
+  >
+    <path d="m20.3 16.5-3.9 3.9-4-3.9 1.1-1.1 2.1 2.1v-5.7h1.5v5.8l2.1-2.1Zm-16.8-.8 2.7 2.7L9 15.7v4.4h1.5V12l-4.3 4.3L2 12v8.1h1.5Z"></path>
+    <path
+      fill="#f9ac00"
+      d="m28.8 20-3.1-3.1-3.1 3.1-1-1.1 3.1-3.1-3.2-3.2 1.1-1 3.1 3.2 3.2-3.2 1.1 1-3.2 3.2 3.1 3.1Z"
+    ></path>
+  </svg>
+)
+
 const nextjsSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -312,6 +327,7 @@ const techStackIcons = {
   "Bootstrap": bootstrapSvg,
   "Tailwind CSS": tailwindcssSvg,
   "React": reactSvg,
+  "MDX": mdxSvg,
   "Next.js": nextjsSvg,
   "Node.js": nodejsSvg,
   "MySQL": mysqlSvg,
@@ -320,12 +336,12 @@ const techStackIcons = {
 
 /**
  * TechStackIcon component with SVG icons of:
- * - CSS, Bootsrap, Tailwind CSS, React, Next.js,
+ * - CSS, Bootsrap, Tailwind CSS, React, MDX, Next.js,
  * - Node.js, MySQL, PHP 
  */
 export default function TechStackIcon({ icon }) {
   return (
-    <div title={icon} className="flex justify-center items-center p-1 bg-white rounded-xl">
+    <div title={icon} className="flex justify-center items-center p-1 bg-white rounded-xl hover:cursor-pointer">
       {techStackIcons[icon]}
     </div>
   )
