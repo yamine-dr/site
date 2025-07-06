@@ -1,33 +1,34 @@
+"use client"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import Placeholder from "@/src/assets/images/project-placeholder.png"
 import TechStackIcon from "../ui/icons/TechStackIcon"
 
 export default function ProjectCard({
   title,
   description,
-  imageURL = Placeholder,
+  imageURL = "/images/project-placeholder.png",
   imageAlt = "",
   techStackIcons,
-  gitHubRepoURL = undefined,
-  projectURL = undefined
+  gitHubRepoURL,
+  projectURL
 }) {
-  const t = useTranslations("Projects.card")
+  const t = useTranslations("AboutPage.projects.card")
   return (
   <article className="flex flex-col flex-1 shrink gap-5 basis-0 min-w-60 max-md:max-w-full">
     <Image 
       src={imageURL}
       alt={imageAlt}
+      width={495}
+      height={374}
       className="border border-base-content object-contain w-full aspect-[1.32] max-md:max-w-full"
     />
-
     <h3 className="text-2xl">
-      {projectURL !== undefined ?
+      {projectURL ?
         (<a
-          className="hover:underline"
           href={projectURL}
           target="_blank"
           rel="noopener noreferrer"
+          className="hover:underline"
         >
           {title}
         </a>)
@@ -35,18 +36,16 @@ export default function ProjectCard({
         title
       }
     </h3>
-
     <hr className="w-full"/>
-
     {description}
 
     <div className="flex flex-wrap gap-7 justify-start text-center whitespace-nowrap">
-      {techStackIcons.map(tech => (<TechStackIcon key={`${tech}`} icon={tech}/>))}
+      {techStackIcons.map(tech => (<TechStackIcon key={tech} icon={tech}/>))}
     </div>
 
     <div className="flex gap-4 justify-start text-center whitespace-nowrap">
-      {/* GitHub link and icon */
-      gitHubRepoURL != undefined && (
+      {/* GitHub link and icon */}
+      {gitHubRepoURL && (
         <a
           className="hover:scale-110 transition-transform"
           title={t("githubURLTitle", {projectTitle: title})}
@@ -70,8 +69,8 @@ export default function ProjectCard({
         </a>
       )}
 
-      {/* Project URL link and icon */
-      projectURL != undefined && (
+      {/* Project URL link and icon */}
+      {projectURL && (
         <a
           className="hover:scale-110 transition-transform"
           title={t("projectURLTitle", {projectTitle: title})}

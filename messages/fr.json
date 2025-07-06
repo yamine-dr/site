@@ -2,66 +2,66 @@
   "Header": {
     "home": "Acceuil",
     "about": "À propos",
+    "blog": "Blog",
     "projects": "Projets",
     "contact": "Contact"
   },
-  "Hero": {
-    "title": {
-      "part1": "Passer de l'idée à une",
-      "part2": "Interface Fluide"
+  "AboutPage": {
+    "hero": {
+      "title":"Passer de l'idée à une <span>Interface Fluide</span>",
+      "subtitle": "Je suis Yamine Daroueche, développeur Web Front-End."
     },
-    "subtitle": "Je suis Yamine Daroueche, développeur Web Front-End."
-  },
-  "About": {
-    "title": "À propos",
-    "text": {
-      "part1": "Je suis un développeur optimiste, motivé et déterminé à apporté de la valeur aux personnes avec lesquelles je travaille.",
-      "part2": "Étant actuellement étudiant en 2ème année de Licence Informatique à l'Université de Limoges, je me suis spécialisé dans le développement Web orienté JavaScript."
+    "about": {
+      "title": "À propos",
+      "subtitle": "Je suis un développeur optimiste, motivé et déterminé à apporté de la valeur aux personnes avec lesquelles je travaille. <br></br>  Étant actuellement étudiant en 2ème année de Licence Informatique à l'Université de Limoges, je me suis spécialisé dans le développement Web orienté JavaScript.",
+      "techStack": "MON TECH STACK"
     },
-    "techStack": "MON TECH STACK"
-  },
-  "Projects": {
-    "title": "Projets",
-    "card": {
-      "githubURLTitle": "dossier GitHub du projet {projectTitle}",
-      "projectURLTitle": "Lien du projet {projectTitle}"
-    },
-    "Sportify": {
-      "title": "Sportify",
-      "description": {
-        "part1": "Scénario (fictif) : Sportify est un groupement limougeaud de salles de sport, proposant différents cours (pilates, cycling, etc.) au public.",
-        "part2": "Ce projet a été réalisé en pure PHP (c'est-à-dire sans Framework). J'ai utilisé l'architecture MVC (Modèle-Vue-Controleur) pour une meilleure organisation du code."
+    "projects": {
+      "title": "Projets",
+      "card": {
+        "githubURLTitle": "dossier GitHub du projet {projectTitle}",
+        "projectURLTitle": "Lien du projet {projectTitle}"
       },
-      "imageAlt": "Page de connexion du site web de Sportify"
+      "Sportify": {
+        "title": "Sportify",
+        "description": "Scénario (fictif) : Sportify est un groupement limougeaud de salles de sport, proposant différents cours (pilates, cycling, etc.) au public. <br></br> Ce projet a été réalisé en pure PHP (c'est-à-dire sans Framework). J'ai utilisé l'architecture MVC (Modèle-Vue-Controleur) pour une meilleure organisation du code.",
+        "imageAlt": "Page de connexion du site web de Sportify"
+      },
+      "Blog": {
+        "title": "Mon blog",
+        "description": "Je travaille actuellement sur un blog technique sur le développement Web, que je compte alimenter en parallèle de mon aprentissage. <br></br> Développement en cours..."
+      }
     },
-    "Blog": {
-      "title": "Mon blog",
-      "description": {
-        "part1": "Je travaille actuellement sur un blog technique sur le développement Web, que je compte alimenter en parallèle de mon aprentissage.",
-        "part2": "Développement en cours..."
+    "contact": {
+      "title": "Contact",
+      "form": {
+        "name": { "label": "Nom" },
+        "email": {
+          "label": "Mail",
+          "validatorHint": "Entrez une adresse mail valide"
+        },
+        "message": {
+          "label": "Votre message",
+          "placeholder": "Entrez votre message ici"
+        },
+        "submit": "Envoyer",
+        "loading": "Envoi...",
+        "response": {
+          "success": "Message envoyé !",
+          "error": "Erreur lors de l'envoi du message."
+        }
       }
     }
   },
-  "Contact": {
-    "title": "Contact",
-    "form": {
-      "name": {
-        "label": "Nom"
-      },
-      "email": {
-        "label": "Mail",
-        "validatorHint": "Entrez une adresse mail valide"
-      },
-      "message": {
-        "label": "Votre message",
-        "placeholder": "Entrez votre message ici"
-      },
-      "submitBtnText": "Envoyer",
-      "loadingText": "Envoi...",
-      "response": {
-        "success": "Message envoyé !",
-        "error": "Erreur lors de l'envoi du message :"
-      }
+  "BlogPage": {
+    "metadata": {
+      "description": "le blog de Yamine Daroueche, étudiant en développement Web"
+    },
+    "featuredPosts": "Articles à la une",
+    "morePosts": "Plus d'articles",
+    "readMore": "Lire l'article",
+    "postPage": {
+      "home": "Acceuil"
     }
   },
   "Footer": {

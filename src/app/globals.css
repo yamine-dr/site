@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
 @theme {
   /* Brown colors palette: https://coolors.co/dbaca9-bd6761-90423c-5e2b27-3a1a18 */
   --color-brown-100: #dbaca9;
@@ -50,26 +55,16 @@
       transform: rotate(0deg);
     }
   }
-}
 
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
-}
-
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-} */
-
-@media (prefers-color-scheme: dark) {
-  /* :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  } */
-}
-
-body {
-  /* color: var(--foreground);
-  background: var(--background); */
-  font-family: Arial, Helvetica, sans-serif;
+  --animate-bounce-horizontal: bounce-horizontal 1s infinite;
+  @keyframes bounce-horizontal {
+    0%, 100% {
+      transform: none;
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateX(15%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
 }

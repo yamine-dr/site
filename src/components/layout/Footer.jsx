@@ -4,7 +4,7 @@ import SocialMediaIcon from "../ui/icons/SocialMediaIcon"
 export default function Footer() {
   const t = useTranslations("Footer")
   return (
-    <footer className="pt-10 footer footer-horizontal footer-center gap-3 max-sm:gap-5 border-t-[0.5px] border-t-base-content">
+    <footer className="mt-10 pt-10 footer footer-horizontal footer-center gap-3 max-sm:gap-5 bg-base-300 border-t border-t-base-content/30">
         <aside className="flex max-sm:flex-col max-sm:gap-5">
             <p>
                 Copyright © {new Date().getFullYear()}, Yamine Daroueche <span className="max-sm:hidden">|</span>

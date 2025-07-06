@@ -2,11 +2,9 @@
 import { useTranslations } from "next-intl"
 import Section from "../layout/Section"
 import ProjectCard from "./ProjectCard"
-import SportifyBanner from "@/src/assets/images/project-sportify.png"
-
 
 export default function Projects() {
-  const t = useTranslations("Projects")
+  const t = useTranslations("AboutPage.projects")
   return (
     <Section id="projects">
       <div className="w-full max-md:max-w-full">
@@ -22,14 +20,10 @@ export default function Projects() {
         <div className="flex flex-wrap gap-10 items-start w-full max-md:max-w-full">
           <ProjectCard
             title={t("Sportify.title")}
-            description={(
-              <p>
-                {t("Sportify.description.part1")}
-                <br />
-                {t("Sportify.description.part2")}
-              </p>
-            )}
-            imageURL={SportifyBanner}
+            description={t.rich("Sportify.description", {
+              br: () => <br/>
+            })}
+            imageURL={"/images/project-sportify.png"}
             imageAlt={t("Sportify.imageAlt")}
             techStackIcons={["PHP", "Bootstrap", "CSS", "MySQL"]}
             gitHubRepoURL="https://github.com/yamine-dr/sportify"
@@ -37,13 +31,9 @@ export default function Projects() {
           />
           <ProjectCard
             title={t("Blog.title")}
-            description={(
-              <p>
-                {t("Blog.description.part1")}
-                <br />
-                {t("Blog.description.part2")}
-              </p>
-            )}
+            description={t.rich("Blog.description", {
+              br: () => <br/>
+            })}
             techStackIcons={["Next.js", "MDX", "Tailwind CSS"]}
           />
         </div>
