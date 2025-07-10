@@ -29,7 +29,7 @@
       },
       "Blog": {
         "title": "Mon blog",
-        "description": "Je travaille actuellement sur un blog technique sur le développement Web, que je compte alimenter en parallèle de mon aprentissage. <br></br> Développement en cours..."
+        "description": "Je travaille actuellement sur un blog, dans lequel je partagerai mon aprentissage du développement Web. J'écrirai aussi sur d'autres sujets. <br></br> Développement en cours..."
       }
     },
     "contact": {
@@ -61,10 +61,13 @@
     "morePosts": "Plus d'articles",
     "readMore": "Lire l'article",
     "postPage": {
+      "notFound": "L'article \"{slug}\" n'a pas été trouvé :(",
       "home": "Acceuil"
     }
   },
   "Footer": {
+    "letsConnect": "FAISONS CONNAISSANCE",
+    "medias": "Je suis joignable sur ces médias.",
     "socialMedia": {
       "iconTitle": "mon {socialMedia}"
     }

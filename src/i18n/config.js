@@ -3,3 +3,4 @@ export const localesFullyWritten = {
     en: "English",
     fr: "Français",
 };
+export const defaultLocale = "en"

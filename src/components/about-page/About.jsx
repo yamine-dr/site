@@ -6,23 +6,21 @@ import TechStackIcon from "@/src/components/ui/icons/TechStackIcon"
 export default function About() {
   const t = useTranslations("AboutPage.about")
   return (
-    <Section id="about">
-      <div className="w-full max-md:max-w-full">
-        <h2 className="flex-1 shrink gap-2.5 self-stretch p-2.5 w-full text-4xl text-center whitespace-nowrap basis-0 max-md:max-w-full">
+    <Section id="about" className="flex flex-col gap-10 justify-center items-center">
+      <div>
+        <h2 className="text-4xl text-center">
           {t("title")}
         </h2>
-        <div className="flex flex-col justify-center items-center p-2.5 w-full max-md:max-w-full">
-          <div className="max-w-full border border-solid bg-base-content border-base-cbg-base-content min-h-px w-[263px]" />
-        </div>
+        <hr className="mt-2 mx-auto w-[263px] border"/>
       </div>
 
-      <p className="flex-1 shrink gap-2.5 self-stretch p-2.5 mt-6 w-full text-lg text-center basis-0 max-md:max-w-full">
+      <p className="text-lg text-center">
         {t.rich("subtitle", {
           br: () => <br/>
         })}
       </p>
 
-      <div className="flex-col justify-center items-center mt-8">
+      <div className="flex-col justify-center items-center">
         <h4 className="text-center">
           {t("techStack")}
         </h4>

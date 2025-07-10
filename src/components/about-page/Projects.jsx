@@ -34,7 +34,9 @@ export default function Projects() {
             description={t.rich("Blog.description", {
               br: () => <br/>
             })}
-            techStackIcons={["Next.js", "MDX", "Tailwind CSS"]}
+            techStackIcons={["Next.js", "MDX", "Tailwind CSS" /* "Upstash" */]}
+            gitHubRepoURL="https://github.com/yamine-dr/site"
+            projectURL="/blog"
           />
         </div>
       </div>

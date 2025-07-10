@@ -42,15 +42,15 @@ export default async function RootLayout({ children, params }) {
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body className={MontserratFont.className}>
-        <Providers>
           <div className="flex flex-col min-h-dvh">
-            <Header/>
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer/>
+            <Providers>
+              <Header/>
+              <main className="flex-1">
+                {children}
+              </main>
+              <Footer/>
+            </Providers>
           </div>
-        </Providers>
       </body>
     </html>
   )

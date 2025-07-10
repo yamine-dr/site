@@ -7,7 +7,7 @@ export default function PostCard({ post, className }) {
   const locale = useLocale()
   const t = useTranslations("BlogPage")
   return (
-    <div className={`card border border-base-content/40 rounded-md hover:scale-105  shadow-neutral shadow-sm hover:shadow-2xl transition-all ${className}`}>
+    <div className={`card border border-base-content/40 rounded-md hover:scale-105 shadow-sm hover:shadow-2xl transition-all ${className}`}>
       {/* <figure>
         <Image 
           src={"/images/project-placeholder.png"}

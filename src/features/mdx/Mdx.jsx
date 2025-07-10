@@ -11,7 +11,6 @@ export default function Mdx({ children }) {
     <Suspense fallback={<div>Loading<span className="loading loading-dots loading-xs"></span></div>}>
       <MDXRemote
         source={children}
-        baseUrl={import.meta.url}
         options={{
           mdxOptions: {
             rehypePlugins: [ShikiPlugin],

@@ -1,9 +1,9 @@
 "use client"
-import { useTranslations, useLocale } from 'next-intl'
-import { locales, localesFullyWritten } from '@/src/i18n/locales'
-import { Link, usePathname } from '@/src/i18n/navigation'
+import { useLocale, useTranslations } from 'next-intl'
+import { Link } from '@/src/i18n/navigation'
 import { useState } from "react"
 import { Icons } from '@/src/components/ui/Icons'
+import LocaleSwitch from '@/src/components/LocaleSwitch'
 import ThemeSwitch from '@/src/components/ThemeSwitch'
 
 /** Navigation link component for the header */
@@ -36,7 +36,7 @@ const Navlinks = ({ onClick }) => {
     { name: "projects", href: "/about#projects" },
     { name: "contact", href: "/about#contact" },
   ]
-
+  
   const t = useTranslations("Header")
   return (
     <>
@@ -47,39 +47,14 @@ const Navlinks = ({ onClick }) => {
   )
 }
 
-const LanguagesDropdownList = () => {
-  const pathname = usePathname()
-  const currentLocale = useLocale()
-  return (
-    <div className="dropdown dropdown-center ml-2">
-      <button tabIndex={0} role="button" className="p-2 bg-none rounded-md hover:cursor-pointer hover:bg-base-content/20 transition-all">
-        <Icons.languages size={20} strokeWidth={1.5}/>
-      </button>
-      <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 p-2 shadow-sm">
-        {locales.filter(locale => currentLocale != locale).map(locale => (
-              <li key={locale} className="text-center text-xs font-medium">
-                <Link
-                  className=""
-                  href={pathname}
-                  locale={locale}  
-                >
-                  {localesFullyWritten[locale]}
-                </Link>
-              </li>
-            ))}
-      </ul>
-    </div>
-  )
-}
-
 /** Header component with navbar */
 export default function Header() {
   const [showNavMenu, setShowNavMenu] = useState(false)
   const toggleNavMenu = () => {
     setShowNavMenu(!showNavMenu)
   }
-  
-  const t = useTranslations("Header")
+
+  const headerLocale = useLocale()
   return (
     <nav className="navbar px-3 md:px-[10%] py-3 justify-between">
       {!showNavMenu && (
@@ -94,7 +69,7 @@ export default function Header() {
             {/* navbar displayed on large viewport */}
             <div className="hidden p-0 lg:flex justify-between items-center">
               <Navlinks/>
-              <LanguagesDropdownList/>
+              <LocaleSwitch/>
               <ThemeSwitch/>
             </div>
 
@@ -116,7 +91,7 @@ export default function Header() {
             <Navlinks onClick={toggleNavMenu}/>
           </div>
           <div className="flex p-2 justify-end">
-            <LanguagesDropdownList/>
+            <LocaleSwitch/>
             <ThemeSwitch/>
           </div>
         </div>

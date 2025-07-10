@@ -1,19 +1,31 @@
-import { X, Menu, Languages, ArrowRight, Eye, Moon, SunMedium, Clipboard } from "lucide-react"
+import { X, Menu, Languages, ArrowRight, Eye, Moon, SunMedium, Clipboard, Link as LinkIcon } from "lucide-react"
+import { Link } from "@/src/i18n/navigation"
 
-const lucideIconSize = 25
+const iconsWithAnchorClassName = "text-base-content/80 hover:scale-140 hover:text-base-content transition-all"
 
 /** Lucide icons */
-export const Icons = {
-  X: X,
+const lucideIcons = {
+  X,
   menu: Menu,
   languages: Languages,
   rightArrow: <ArrowRight className="size-1/5"/>,
   eye: <Eye size={17}/>,
-  moon: <Moon size={lucideIconSize} fill="currentColor"/>,
-  sun: <SunMedium size={lucideIconSize} fill="currentColor"/>,
-  clipboard: <Clipboard size={lucideIconSize}/>,
+  moon: Moon,
+  sun: SunMedium,
+  clipboard: <Clipboard size={25} />,
+  Link: ({ size, href }) => (
+    href.startsWith("http") ? 
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <LinkIcon size={size} strokeWidth={2.5} className={iconsWithAnchorClassName}/>
+      </a>
+      :
+      <Link href={href}>
+        <LinkIcon size={size} strokeWidth={2.5} className={iconsWithAnchorClassName}/>
+      </Link>
+  ),
 }
 
+/* Tech icons */
 const techIconSize = 40
 
 const cssSvg = (
@@ -342,7 +354,7 @@ const phpSvg = (
  * - CSS, Bootsrap, Tailwind CSS, React, MDX, Next.js,
  * - Node.js, MySQL, PHP 
  */
-export const techIcons = {
+const techIcons = {
   "CSS": cssSvg,
   "Bootstrap": bootstrapSvg,
   "Tailwind CSS": tailwindcssSvg,
@@ -352,4 +364,76 @@ export const techIcons = {
   "Node.js": nodejsSvg,
   "MySQL": mysqlSvg,
   "PHP": phpSvg,
+}
+
+/* Social media icons */
+const socialMediaIconSize = 25
+
+export const GitHub = ({ size = socialMediaIconSize, href = "https://github.com/yamine-dr", className }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 20 20"
+      className={`${iconsWithAnchorClassName} ${className}`}
+    >
+      <g id="Page-1" fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
+        <g
+          id="Dribbble-Light-Preview"
+          fill="currentColor"
+          transform="translate(-140 -7559)"
+        >
+          <g id="icons" transform="translate(56 160)">
+            <path
+              id="github-[#142]"
+              d="M94 7399c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051a9.4 9.4 0 0 0-2.505-.345 9.4 9.4 0 0 0-2.503.345c-1.911-1.326-2.751-1.051-2.751-1.051-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493-3.974-1.355-6.839-5.199-6.839-9.729 0-5.663 4.478-10.253 10-10.253"
+            ></path>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </a>
+)
+
+const LinkedIn = ({ size = socialMediaIconSize, className }) => (
+  <a href="https://www.linkedin.com/in/yamine-daroueche-45a242228/" target="_blank" rel="noopener noreferrer">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      fill="currentColor"
+      viewBox="0 0 32 32"
+      className={`${iconsWithAnchorClassName} ${className}`}
+    >
+      <path d="M28.778 1.004H3.191a2.185 2.185 0 0 0-2.186 2.159v25.672a2.186 2.186 0 0 0 2.186 2.161h25.612c1.2 0 2.175-.963 2.194-2.159V3.165a2.195 2.195 0 0 0-2.195-2.161h-.029.001zM9.9 26.562H5.446V12.251H9.9zM7.674 10.293a2.579 2.579 0 1 1 2.579-2.58v.004a2.577 2.577 0 0 1-2.577 2.577zm18.882 16.269h-4.441v-6.959c0-1.66-.034-3.795-2.314-3.795-2.316 0-2.669 1.806-2.669 3.673v7.082h-4.441V12.252h4.266v1.951h.058a4.69 4.69 0 0 1 4.22-2.312h-.009c4.5 0 5.332 2.962 5.332 6.817v7.855z"></path>
+    </svg>
+  </a>
+)
+
+const Email = ({ size = socialMediaIconSize, className }) => (
+  <a href="mailto:contact@yaminedaroueche.com" rel="noopener noreferrer">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      className={`${iconsWithAnchorClassName} ${className}`}
+    >
+      <path d="M22 5v4l-10 4L2 9V5a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1M2 11.154V19a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-7.846l-10 4Z"></path>
+    </svg>
+  </a>
+)
+
+const socialMediaIcons = {
+  GitHub,
+  LinkedIn,
+  Email,
+}
+
+export const Icons = {
+  ...lucideIcons,
+  ...techIcons,
+  ...socialMediaIcons,
 }

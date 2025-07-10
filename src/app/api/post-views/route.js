@@ -5,19 +5,17 @@ const crypto = require("node:crypto");
 
 export const config = { runtime: "edge" }
 
-async function fetchUserLocation() {
+async function fetchUserIp() {
   try {
-    const response = await axios.get('https://ipapi.co/json/');
+    const response = await axios.get('https://api.ipify.org/');
     return response;
   } catch (error) {
-    console.error('Error fetching location:', error);
+    console.error('Error fetching ip:', error);
     return null;
   }
 };
 
-/**
- * increment the number of views of a blog post, if the user has not already seen it in the last 24h
- */
+/** increment the number of views of a blog post, if the user has not already seen it in the last 24h */
 export async function POST(req) {
   if (req.method !== "POST") 
     return new NextResponse("use POST", { status: 405 });
@@ -31,7 +29,8 @@ export async function POST(req) {
   if (!slug) 
     return new NextResponse("Slug not found", { status: 400 });
   
-  const ip = (await fetchUserLocation()).data.ip;
+  const userIp = await fetchUserIp()
+  const ip = userIp.data;
   if (ip) {
     // hash the ip to respect the RGPD
     const hashedIp = crypto.createHash("sha256").update(ip).digest("hex");

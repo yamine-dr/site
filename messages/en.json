@@ -29,7 +29,7 @@
       },
       "Blog": {
         "title": "My blog",
-        "description": "I'm currently working on a blog, where I will share my learning journey in Web development. <br></br> Work in progress..."
+        "description": "I'm currently working on a blog, where I will share my learning journey in Web development. I will also write on other subjects. <br></br> Work in progress..."
       }
     },
     "contact": {
@@ -61,10 +61,13 @@
     "morePosts": "More posts",
     "readMore": "Read more",
     "postPage": {
+      "notFound": "The blog post \"{slug}\" was not found :(",
       "home": "Home"
     }
   },
   "Footer": {
+    "letsConnect": "LET'S CONNECT",
+    "medias": "You can find me on these medias.",
     "socialMedia": {
       "iconTitle": "my {socialMedia}"
     }
