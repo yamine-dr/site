@@ -12,7 +12,12 @@ export default function ThemeSwitch() {
   }, [])
 
   if (!mounted) return (
-    <></>
+    <button 
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className='ml-3 p-1 hover:cursor-pointer'
+    >
+      <Icons.Sun size={25} fill="currentColor"/>
+    </button>
   )
 
   if (theme === "dark") return (
