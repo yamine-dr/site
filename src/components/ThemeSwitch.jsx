@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
       onClick={() => setTheme("light")}
       className='ml-3 p-1 hover:cursor-pointer'
     >
-      <Icons.sun size={25} fill="currentColor"/>
+      <Icons.Sun size={25} fill="currentColor"/>
     </button>
   )
 
@@ -29,7 +29,7 @@ export default function ThemeSwitch() {
       onClick={() => setTheme("dark")}
       className='ml-3 p-1 hover:cursor-pointer'
     >
-      <Icons.moon size={25} fill="currentColor"/>
+      <Icons.Moon size={25} fill="currentColor"/>
     </button>
   )
 }

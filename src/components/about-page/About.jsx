@@ -2,6 +2,7 @@
 import { useTranslations } from "next-intl"
 import Section from "../layout/Section"
 import TechStackIcon from "@/src/components/ui/icons/TechStackIcon"
+import { Icons } from "../ui/Icons"
 
 export default function About() {
   const t = useTranslations("AboutPage.about")
@@ -20,18 +21,18 @@ export default function About() {
         })}
       </p>
 
-      <div className="flex-col justify-center items-center">
+      <div className="flex flex-col gap-4 justify-center items-center">
         <h4 className="text-center">
           {t("techStack")}
         </h4>
-        <div className="flex gap-7 justify-center mt-4 text-center whitespace-nowrap">
-          <TechStackIcon icon="Next.js"/>
-          <TechStackIcon icon="React"/>
-          <TechStackIcon icon="Tailwind CSS"/>
+        <div className="flex gap-7 justify-center">
+          <Icons.Nextjs/>
+          <Icons.React/>
+          <Icons.TailwindCSS/>
         </div>
-        <div className="flex gap-7 justify-center mt-4 text-center whitespace-nowrap">
-          <TechStackIcon icon="Node.js"/>
-          <TechStackIcon icon="MySQL"/>
+        <div className="flex gap-7 justify-center">
+          <Icons.Nodejs/>
+          <Icons.MySQL/>
         </div>
       </div>
     </Section>

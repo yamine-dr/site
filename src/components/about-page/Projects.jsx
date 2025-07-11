@@ -2,6 +2,7 @@
 import { useTranslations } from "next-intl"
 import Section from "../layout/Section"
 import ProjectCard from "./ProjectCard"
+import { Icons as I } from "../ui/Icons"
 
 export default function Projects() {
   const t = useTranslations("AboutPage.projects")
@@ -25,7 +26,7 @@ export default function Projects() {
             })}
             imageURL={"/images/project-sportify.png"}
             imageAlt={t("Sportify.imageAlt")}
-            techStackIcons={["PHP", "Bootstrap", "CSS", "MySQL"]}
+            techStackIcons={[I.PHP, I.Bootstrap, I.CSS, I.MySQL]}
             gitHubRepoURL="https://github.com/yamine-dr/sportify"
             projectURL="https://yaminedaroueche.com/portfolio/sportify"
           />
@@ -34,7 +35,7 @@ export default function Projects() {
             description={t.rich("Blog.description", {
               br: () => <br/>
             })}
-            techStackIcons={["Next.js", "MDX", "Tailwind CSS" /* "Upstash" */]}
+            techStackIcons={[I.Nextjs, I.MDX, I.TailwindCSS /* "Upstash" */]}
             gitHubRepoURL="https://github.com/yamine-dr/site"
             projectURL="/blog"
           />

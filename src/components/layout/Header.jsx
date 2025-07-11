@@ -54,7 +54,6 @@ export default function Header() {
     setShowNavMenu(!showNavMenu)
   }
 
-  const headerLocale = useLocale()
   return (
     <nav className="navbar px-3 md:px-[10%] py-3 justify-between">
       {!showNavMenu && (
@@ -75,7 +74,7 @@ export default function Header() {
 
             {/* NavMenu toggler (hidden on large viewport) */}
             <button onClick={toggleNavMenu} className="lg:hidden btn px-2 py-1 h-fit bg-transparent border border-base-content/20 shadow-none">
-              <Icons.menu size={40} strokeWidth={1}/>
+              <Icons.Menu size={40} strokeWidth={1}/>
             </button>
           </div>
         </>

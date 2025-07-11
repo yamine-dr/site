@@ -5,10 +5,21 @@ import { useMDXComponents } from "@/mdx-components"
 import { MdxYouTube } from "./MdxYouTube"
 import { MdxPre } from "./MdxPre"
 import { MdxLocalised } from "./MdxLocalised"
+import { useTranslations } from "next-intl"
+import { Icons } from "@/src/components/ui/Icons"
+
+export const dynamic = "force-static"
 
 export default function Mdx({ children }) {
+  const t = useTranslations("BlogPage.postPage")
+  const fallback = (
+    <>
+      {t("loading")}<span className="loading loading-dots loading-xs mt-1.5"></span>
+    </>
+  )
+  
   return (
-    <Suspense fallback={<div>Loading<span className="loading loading-dots loading-xs"></span></div>}>
+    <Suspense fallback={fallback}>
       <MDXRemote
         source={children}
         options={{
@@ -20,6 +31,7 @@ export default function Mdx({ children }) {
           YouTube: MdxYouTube,
           pre: MdxPre,
           Localised: MdxLocalised,
+          I: Icons,
         })}
       />
     </Suspense>

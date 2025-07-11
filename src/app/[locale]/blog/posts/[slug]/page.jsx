@@ -1,5 +1,4 @@
 import { getLocalisedPost } from "@/src/libs/posts"
-import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getTranslations } from "next-intl/server"
 import { Link } from "@/src/i18n/navigation"
 import { notFound } from "next/navigation"
@@ -52,9 +51,7 @@ export default async function BlogPostPage({ params }) {
         height={374}
         className="w-full aspect-[2] object-cover"
       /> */}
-      <NextIntlClientProvider locale={locale}>
-        <Mdx>{post.content}</Mdx>
-      </NextIntlClientProvider>
+      <Mdx>{post.content}</Mdx>
 
       <UpdateViews slug={slug}/>
     </article>

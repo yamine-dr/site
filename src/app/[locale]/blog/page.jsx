@@ -34,7 +34,7 @@ export default async function BlogPage() {
           <a href="#"
             className="md:w-33 flex justify-end items-center gap-1 max-md:text-xs text-sm text-info md:hover:animate-bounce-horizontal"
           >
-            {t("morePosts")} {Icons.rightArrow}
+            {t("morePosts")} <Icons.ArrowRight className="size-1/5"/>
           </a>
         </div>
 

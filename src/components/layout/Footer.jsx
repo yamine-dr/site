@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl"
-import { Icons } from "../ui/Icons"
+import { Icons, iconsWithAnchorClassName as iconsClassName } from "../ui/Icons"
 import { Link } from "@/src/i18n/navigation"
 
 /** Navigation links component for the footer */
@@ -26,6 +26,24 @@ const Navlinks = () => {
   )
 }
 
+/** Media icons anchors: GitHub, LinkedIn, Email */
+const MediaIcons = () => {
+  const mediaIcons = [
+    {name: "GitHub", href: "https://github.com/yamine-dr"},
+    {name: "LinkedIn", href: "https://www.linkedin.com/in/yamine-daroueche-45a242228/"},
+    {name: "Mail", href: "mailto:contact@yaminedaroueche.com"},
+  ]
+
+  return mediaIcons.map(({ name, href }) => {
+    const Icon = Icons[name]
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" key={name}>
+        <Icon className={iconsClassName}/>
+      </a>
+    )
+  })
+}
+
 export default function Footer() {
   const t = useTranslations("Footer")
   return (
@@ -34,9 +52,7 @@ export default function Footer() {
         <p className="font-semibold text-info">{t("letsConnect")}</p>
         <small>{t("medias")}</small>
         <div className="mt-2 flex gap-4 items-center max-[900px]:justify-center">
-          <Icons.GitHub/>
-          <Icons.LinkedIn/>
-          <Icons.Email/>
+          <MediaIcons/>
         </div>
       </div>
 

@@ -2,7 +2,8 @@
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import TechStackIcon from "../ui/icons/TechStackIcon"
-import { Icons } from "../ui/Icons"
+import { Icons, iconsWithAnchorClassName as iconsClassName } from "../ui/Icons"
+import { Link } from "@/src/i18n/navigation"
 
 export default function ProjectCard({
   title,
@@ -13,6 +14,28 @@ export default function ProjectCard({
   gitHubRepoURL,
   projectURL
 }) {
+  const GitHubIcon = ( gitHubRepoURL ?
+    <a href={gitHubRepoURL} target="_blank" rel="noopener noreferrer">
+      <Icons.GitHub strokeWidth={2.5} className={iconsClassName}/>
+    </a>
+    :
+    null
+  )
+  const LinkIcon = <Icons.LucideLink strokeWidth={2.5} className={iconsClassName}/>
+  const projectURLIcon = ( projectURL ? 
+    (projectURL.startsWith("http") ?
+      <a href={projectURL} target="_blank" rel="noopener noreferrer">
+        {LinkIcon}
+      </a>
+      :
+      <Link href={projectURL}>
+        {LinkIcon}
+      </Link>
+    )
+    :
+    null
+  )
+  
   const t = useTranslations("AboutPage.projects.card")
   return (
   <article className="flex flex-col flex-1 shrink gap-5 basis-0 min-w-60 max-md:max-w-full">
@@ -41,14 +64,12 @@ export default function ProjectCard({
     {description}
 
     <div className="flex flex-wrap gap-7 justify-start text-center whitespace-nowrap">
-      {techStackIcons.map(tech => (<TechStackIcon key={tech} icon={tech}/>))}
+      {techStackIcons.map((Icon, index) => <Icon key={`icon-${index}`}/>)}
     </div>
 
     <div className="flex gap-4 justify-start text-center whitespace-nowrap">
-      {gitHubRepoURL && <Icons.GitHub href={gitHubRepoURL}/>}
-
-      {/* Project URL link and icon */}
-      {projectURL && <Icons.Link href={projectURL}/>}
+      {GitHubIcon}
+      {projectURLIcon}
     </div>
   </article>
   )
