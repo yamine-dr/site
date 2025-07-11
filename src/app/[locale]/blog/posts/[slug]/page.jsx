@@ -1,4 +1,4 @@
-import { getLocalisedPost } from "@/src/libs/posts"
+import { getPost, getLocalisedPost } from "@/src/libs/posts"
 import { getLocale, getTranslations } from "next-intl/server"
 import { Link } from "@/src/i18n/navigation"
 import { notFound } from "next/navigation"
@@ -8,9 +8,11 @@ import UpdateViews from "./UpdateViews"
 import { redis } from "@/src/libs/redis"
 import { PostViews } from "@/src/components/blog-page/PostViews"
 
+export const dynamic = "force-static"
+
 export async function generateMetadata({ params }) {
-  const locale = await getLocale()
-  const post = await getLocalisedPost((await params).slug, locale)
+  const { slug, locale } = await params
+  const post = await getLocalisedPost(slug, locale)
   if (!post) {
     const t = await getTranslations("Metadata")
     return {
@@ -33,7 +35,7 @@ export default async function BlogPostPage({ params }) {
     notFound()
   }
 
-  const views = Number(await redis.get(`postviews:${slug}`)) ?? 0
+  const views = Number(await redis.get(`views:post${post.id}`)) ?? 0
   return (
     <article className="prose prose-sm lg:prose-lg mx-auto">
       <small>
@@ -53,7 +55,7 @@ export default async function BlogPostPage({ params }) {
       /> */}
       <Mdx>{post.content}</Mdx>
 
-      <UpdateViews slug={slug}/>
+      <UpdateViews id={post.id}/>
     </article>
   )
 }

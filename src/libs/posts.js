@@ -21,7 +21,7 @@ export async function getPosts() {
 
     posts.push({
       ...frontMatter.data,
-      slug: fileName.replace(/^\d+-/,"").replace(".mdx", ""),
+      slug: fileName.replace(/^\d+-[a-z]{2}-/,"").replace(".mdx", ""),
       content: frontMatter.content,
     })
   }
@@ -31,7 +31,7 @@ export async function getPosts() {
 
 export async function getLocalisedPosts(locale) {
   const files = await fs.readdir(postsDirectory);
-  const fileNames = files.filter(file => file.endsWith(".mdx"));
+  const fileNames = files.filter(file => file.includes(`-${locale}-`) && file.endsWith(".mdx"));
 
   const posts = [];
   for await (const fileName of fileNames) {
@@ -43,13 +43,10 @@ export async function getLocalisedPosts(locale) {
     if (!frontMatter.data.published && process.env.NODE_ENV !== "development") {
       continue;
     }
-
-    const { title, description, ...rest } = frontMatter.data;
+    
     posts.push({
-      ...rest,
-      title: title[locale], // extract the localized title
-      description: description[locale], // Extract the localized description
-      slug: fileName.replace(/^\d+-/,"").replace(".mdx", ""),
+      ...frontMatter.data,
+      slug: fileName.replace(/^\d+/,"").replace(`-${locale}-`, "").replace(".mdx", ""),
       content: frontMatter.content,
     });
   }

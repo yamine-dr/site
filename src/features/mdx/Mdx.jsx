@@ -8,8 +8,6 @@ import { MdxLocalised } from "./MdxLocalised"
 import { useTranslations } from "next-intl"
 import { Icons } from "@/src/components/ui/Icons"
 
-export const dynamic = "force-static"
-
 export default function Mdx({ children }) {
   const t = useTranslations("BlogPage.postPage")
   const fallback = (

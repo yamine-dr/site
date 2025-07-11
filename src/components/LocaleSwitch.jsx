@@ -19,6 +19,7 @@ export default function LocaleSwitch() {
     <></>
   )
 
+  const newPathname = pathname.includes("/posts/") ? "/blog" : pathname
   return (
     <div className="dropdown dropdown-center ml-2">
       <button tabIndex={0} role="button" className="p-2 bg-none rounded-md hover:cursor-pointer hover:bg-base-content/20 transition-all">
@@ -27,8 +28,8 @@ export default function LocaleSwitch() {
       <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-1 p-2 shadow-sm">
         {locales.filter(locale => locale !== currentLocale).map(otherLocale => (
           <li key={otherLocale} className="text-center text-xs font-medium">
-            <button onClick={() => router.replace(pathname, {locale: otherLocale})} className="mx-auto p-0">
-              <Link href={pathname} locale={otherLocale} className="block py-1.5 px-3">
+            <button onClick={() => router.replace(newPathname, {locale: otherLocale})} className="mx-auto p-0">
+              <Link href={newPathname} locale={otherLocale} className="block py-1.5 px-3">
                 {localesFullyWritten[otherLocale]}
               </Link>
             </button>
