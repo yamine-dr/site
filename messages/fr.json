@@ -1,13 +1,4 @@
 {
-  "Metadata": {
-    "homePage": {
-      "description": "le blog de Yamine Daroueche, étudiant en développement Web"
-    },
-    "notFound": {
-      "title": "404 - page introuvable",
-      "description": "La page recherchée est introuvable"
-    }
-  },
   "Header": {
     "home": "Acceuil",
     "about": "À propos",
@@ -72,7 +63,7 @@
     "postPage": {
       "home": "Acceuil",
       "loading": "Chargement",
-      "notFound": "L'article \"{slug}\" n'a pas été trouvé"
+      "notFound": "L'article \"{slug}\" n'a pas été trouvé :("
     }
   },
   "Footer": {

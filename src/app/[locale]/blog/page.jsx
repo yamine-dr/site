@@ -24,7 +24,7 @@ export default async function BlogPage() {
   let posts = await getLocalisedPosts(locale)
   // add the views for each post
   posts = await Promise.all(posts.map(async (post) => {
-    return { ...post, views: Number(await redis.get(`views:post${post.id}`)) ?? 0 }
+    return { ...post, views: Number(await redis.get(`postviews:${post.slug}`)) ?? 0 }
   }))
   return (
     <>

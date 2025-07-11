@@ -24,23 +24,23 @@ export async function POST(req) {
     return new NextResponse("must be json", { status: 400 });
 
   const body = await req.json();
-  const id = body.id;
+  const slug = body.slug;
 
-  if (!id) 
-    return new NextResponse("ID not found", { status: 400 });
+  if (!slug) 
+    return new NextResponse("Slug not found", { status: 400 });
   
   const userIp = await fetchUserIp()
   const ip = userIp.data;
   if (ip) {
     // hash the ip to respect the RGPD
     const hashedIp = crypto.createHash("sha256").update(ip).digest("hex");
-    const isNewView = await redis.set(`deduplicate:${hashedIp}:${id}`,true, {
+    const isNewView = await redis.set(`deduplicate:${hashedIp}:${slug}`,true, {
       nx: true, // only set the key if it does not already exist
       ex: 60 * 60 * 24, // expires in 24 h -> (60 * 60 * 24) seconds
     });
     if (!isNewView) return new NextResponse(null, { status: 202 });
   }
 
-  await redis.incr(`views:post${id}`);
+  await redis.incr(`postviews:${slug}`);
   return new NextResponse(null, { status: 202 });
 }
