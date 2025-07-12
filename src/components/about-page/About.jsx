@@ -1,7 +1,6 @@
 "use client"
 import { useTranslations } from "next-intl"
 import Section from "../layout/Section"
-import TechStackIcon from "@/src/components/ui/icons/TechStackIcon"
 import { Icons } from "../ui/Icons"
 
 export default function About() {

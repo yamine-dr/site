@@ -2,17 +2,17 @@
 import { useEffect } from "react"
 
 /**
- * A component that update the views number of the blog post with the `slug` param.
- * @param {string} props.slug slug of the blog post
+ * A component that update the views number of the blog post with its ID.
+ * @param {string} props.id ID of the blog post
  */
-export default function UpdateViews({ slug }) {
+export default function UpdateViews({ id }) {
   useEffect(() => {
-    fetch("/api/post-views", {
+    fetch("/api/post/views", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ slug }),
+      body: JSON.stringify({ id }),
     })
-  }, [slug])
+  }, [id])
   
   return null
 }

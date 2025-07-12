@@ -9,8 +9,8 @@ import { redis } from "@/src/libs/redis"
 import { PostViews } from "@/src/components/blog-page/PostViews"
 
 export async function generateMetadata({ params }) {
-  const locale = await getLocale()
-  const post = await getLocalisedPost((await params).slug, locale)
+  const { slug, locale } = await params
+  const post = await getLocalisedPost(slug, locale)
   if (!post) {
     const t = await getTranslations("Metadata")
     return {
@@ -27,17 +27,16 @@ export async function generateMetadata({ params }) {
 
 export default async function BlogPostPage({ params }) {
   const { slug, locale } = await params
-  const t = await getTranslations("BlogPage.postPage")
   const post = await getLocalisedPost(slug, locale)
   if (!post) {
     notFound()
   }
 
-  const views = Number(await redis.get(`postviews:${slug}`)) ?? 0
+  const views = Number(await redis.get(`post${post.id}:views`)) ?? 0
   return (
     <article className="prose prose-sm lg:prose-lg mx-auto">
       <small>
-        <Link href="/blog" className="text-info">{t("home")}</Link> / {post.title}
+        <Link href="/blog" className="text-info">Blog</Link> / {post.title}
       </small>
       <h1 className="mb-2 lg:mb-2">{post.title}</h1>
       <div className="text-xs text-base-content/70">
@@ -53,7 +52,7 @@ export default async function BlogPostPage({ params }) {
       /> */}
       <Mdx>{post.content}</Mdx>
 
-      <UpdateViews slug={slug}/>
+      <UpdateViews id={post.id}/>
     </article>
   )
 }

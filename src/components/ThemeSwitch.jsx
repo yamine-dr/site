@@ -15,7 +15,7 @@ export default function ThemeSwitch() {
     <></>
   )
 
-  const CurrentIcon = theme === "dark" ? Icons.Sun : Icons.Moon
+  const CurrentIcon = (theme === "dark") ? Icons.Sun : Icons.Moon
   return (
     <button 
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -24,22 +24,4 @@ export default function ThemeSwitch() {
       <CurrentIcon size={25} fill="currentColor"/>
     </button>
   )
-
-  // if (theme === "dark") return (
-  //   <button 
-  //     onClick={() => setTheme("light")}
-  //     className='ml-3 p-1 hover:cursor-pointer'
-  //   >
-  //     <Icons.Sun size={25} fill="currentColor"/>
-  //   </button>
-  // )
-
-  // if (theme === "light") return (
-  //   <button 
-  //     onClick={() => setTheme("dark")}
-  //     className='ml-3 p-1 hover:cursor-pointer'
-  //   >
-  //     <Icons.Moon size={25} fill="currentColor"/>
-  //   </button>
-  // )
 }

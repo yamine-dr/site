@@ -6,7 +6,17 @@
     "projects": "Projets",
     "contact": "Contact"
   },
+  "RootPage": {
+    "metadata": {
+      "title": "Yamine Daroueche - développeur Web",
+      "description": "C'est mon site personnel, où je partage mon parcours d'apprentissage, mes projets et découvertes dans le développement Web."
+    }
+  },
   "AboutPage": {
+    "metadata": {
+      "title": "Yamine Daroueche - développeur Web",
+      "description":"C'est mon site portfolio, où je présente mes projets de développement Web."
+    },
     "hero": {
       "title":"Passer de l'idée à une <span>Interface Fluide</span>",
       "subtitle": "Je suis Yamine Daroueche, développeur Web Front-End."

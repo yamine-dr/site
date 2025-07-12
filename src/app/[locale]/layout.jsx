@@ -5,7 +5,7 @@ import Providers from '../providers/Providers'
 import Header from '@/src/components/layout/Header'
 import Footer from '@/src/components/layout/Footer'
 
-// to-do: localy host "Space Grotesk" font instead of using Google Fonts API
+// to-do: localy host "Montserrat" font instead of using Google Fonts API
 // Tutorial link: https://www.youtube.com/watch?v=zK-yy6C2Nck
 import { Montserrat } from "next/font/google"
 import "@/src/app/globals.css"
@@ -14,23 +14,6 @@ const MontserratFont = Montserrat({
   subsets: ["latin"],
   weight: "500",
 })
-
-// to-do: add translation of metadata.descrition in french
-// export const metadata = {
-//   title: {
-//     default: "Yamine Daroueche - Portfolio",
-//   },
-//   description: "The portfolio of Yamine Daroueche, an aspiring web developer",
-//   creator: "Yamine Daroueche",
-//   publisher: "Yamine Daroueche",
-//   authors: [{name: "Yamine Daroueche"}],
-//   openGraph: {
-//     title: "Yamine Daroueche - Portfolio",
-//     description: "The portfolio of Yamine Daroueche, an aspiring web developer",
-//     type: "website",
-//     authors: ["Yamine Daroueche"],
-//   },
-// }
 
 export default async function RootLayout({ children, params }) {
   // Ensure that the incoming `locale` is valid

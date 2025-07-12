@@ -1,7 +1,6 @@
 "use client"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import TechStackIcon from "../ui/icons/TechStackIcon"
 import { Icons, iconsWithAnchorClassName as iconsClassName } from "../ui/Icons"
 import { Link } from "@/src/i18n/navigation"
 

@@ -5,19 +5,7 @@
 }
 
 @theme {
-  /* Brown colors palette: https://coolors.co/dbaca9-bd6761-90423c-5e2b27-3a1a18 */
-  --color-brown-100: #dbaca9;
-  --color-brown-200: #bd6761;
-  --color-brown-300: #90423c;
-  --color-brown-400: #5e2b27;
-  --color-brown-500: #3a1a18;
-
-  /* "newgreen" colors palette: https://coolors.co/68ca7c-40b557-359749-256a33-11270b */
-  --color-newgreen-100: #68ca7c;
-  --color-newgreen-200: #40b557;
-  --color-newgreen-300: #359749;
-  --color-newgreen-400: #256a33;
-  --color-newgreen-500: #11270b;
+  --breakpoint-footer-wrapped: 56.25rem;
 
   /* Animations */
   --animate-wave: wave 2s ease-in infinite;

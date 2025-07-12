@@ -21,6 +21,7 @@ export async function getPosts() {
 
     posts.push({
       ...frontMatter.data,
+      id: fileName.substring(0, 3).replace(/0+/, ""),
       slug: fileName.replace(/^\d+-/,"").replace(".mdx", ""),
       content: frontMatter.content,
     })
@@ -47,6 +48,7 @@ export async function getLocalisedPosts(locale) {
     const { title, description, ...rest } = frontMatter.data;
     posts.push({
       ...rest,
+      id: fileName.substring(0, 3).replace(/0+/, ""),
       title: title[locale], // extract the localized title
       description: description[locale], // Extract the localized description
       slug: fileName.replace(/^\d+-/,"").replace(".mdx", ""),

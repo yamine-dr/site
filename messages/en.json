@@ -6,7 +6,17 @@
     "projects": "Projects",
     "contact": "Contact"
   },
+  "RootPage": {
+    "metadata": {
+      "title": "Yamine Daroueche - Web developer",
+      "description": "This is my personal website, where I share my learning journey, projects, and insights in Web development."
+    }
+  },
   "AboutPage": {
+    "metadata": {
+      "title": "Yamine Daroueche - Web developer",
+      "description":"This is my portfolio site, where I showcase my Web development projects."
+    },
     "hero": {
       "title": "Transforming Concepts into <span>Seamless User Experience</span>",
       "subtitle": "I'm Yamine Daroueche, a French front-end Web developer."
@@ -55,7 +65,7 @@
   },
   "BlogPage": {
     "metadata": {
-      "description": "le blog de Yamine Daroueche, étudiant en développement Web"
+      "description": "The blog of Yamine Daroueche, student in Web development"
     },
     "featuredPosts": "Featured Posts",
     "morePosts": "More posts",

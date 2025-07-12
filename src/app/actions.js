@@ -1,5 +1,6 @@
 "use server";
 import nodemailer from "nodemailer";
+import { headers } from "next/headers";
 
 /**
  * Submits the contact form to contact@yaminedaroueche.com using Nodemailer
@@ -43,4 +44,11 @@ export async function submitContactForm(previousFormState, formData) {
   } finally {
     return { name, email, message, response };
   }
+}
+
+export async function getURLWithPathname(pathname) {
+  const headersList = await headers();
+  const protocol = headersList.get('x-forwarded-proto') || 'https';
+  const host = headersList.get('host');
+  return `${protocol}://${host}${pathname}`;
 }

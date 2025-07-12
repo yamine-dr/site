@@ -47,11 +47,11 @@ const MediaIcons = () => {
 export default function Footer() {
   const t = useTranslations("Footer")
   return (
-    <footer className="mt-10 mx-3 md:mx-[10%] py-10 flex max-[900px]:flex-col justify-between items-center border-t border-t-base-content/20">
-      <div className="max-[900px]:text-center">
+    <footer className="mt-10 mx-3 md:mx-[10%] max-footer-wrapped:py-5 py-10 flex max-footer-wrapped:flex-col max-footer-wrapped:gap-5 justify-between items-center border-t border-t-base-content/20">
+      <div className="max-footer-wrapped:text-center">
         <p className="font-semibold text-info">{t("letsConnect")}</p>
         <small>{t("medias")}</small>
-        <div className="mt-2 flex gap-4 items-center max-[900px]:justify-center">
+        <div className="mt-2 flex gap-4 items-center max-footer-wrapped:justify-center">
           <MediaIcons/>
         </div>
       </div>
