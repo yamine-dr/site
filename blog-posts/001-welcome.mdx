@@ -11,6 +11,8 @@ published: true
 publishedAt: 2025-06-24
 ---
 
+export const iconsClassName = "mx-1"
+
 <Localised lang="en">
   This is the first article of my blog!
 
@@ -36,21 +38,42 @@ publishedAt: 2025-06-24
   ## Tech stack
   For the technical aspect of this blog, I decided to use the following tech stack:
 
-  #### Main framework: Next.js
+  {/* <div className="flex flex-col">
+    <div className="px-2 flex gap-5 justify-center items-center text-base-100 bg-base-content rounded-md">
+      FRONT-END:
+      <div className="flex flex-col text-center">
+        <I.MDX className={iconsClassName}/> <br/> MDX
+      </div>
+      <div className='h-15 w-0.5 border border-neutral/20'/>
+      <div className="flex flex-col text-center">
+        <I.Motion className={iconsClassName}/> <br/> Motion
+      </div>
+      <div className='h-15 w-0.5 border border-neutral/20'/>
+      <div className="flex flex-col text-center">
+        <I.TailwindCSS className={iconsClassName}/> <br/> Tailwind CSS
+      </div>
+    </div>
+  </div> */}
+
+  > - Framework : <I.Nextjs className={iconsClassName}/>
+  > - Front-End : <I.MDX className={iconsClassName}/> <I.Motion className={iconsClassName}/> <I.TailwindCSS className={iconsClassName}/>
+  > - Back-End : <I.Nodejs className={iconsClassName}/>
+
+  ### Main framework: Next.js
   Next.js is probably one of the most used framework for Web development. It's not hard to learn it, and there is a lot of documentation and information online about it. Love it or hate it, I personnally choosed Next.js for its convenience.
 
-  #### Front-End
-  - MDX: to write the articles. I find it really handy because it uses Markdown format, which is easier to write than HTML because there is no need for HTML tags everywhere.
-  - Motion: to handle animations.
-  - Tailwind CSS: really basic for styling.
-  - DaisyUI: a Tailwind CSS plugin to enhance the styling options.
-  - Lucide React: icon library.
-  - Shiky: for code blocks syntax highlighting. I will use it on the technical articles where I will need to write code directly in the article.
+  ### Front-End
+  - **MDX**: to write the articles. I find it really handy because it uses "[Markdown](https://en.wikipedia.org/wiki/Markdown)" format, which is easier to write than HTML because there is no need for HTML tags everywhere.
+  - **Motion**: to handle animations.
+  - **Tailwind CSS**: really basic for styling.
+  - **DaisyUI**: a Tailwind CSS plugin to enhance the styling options.
+  - **Lucide React**: icon library.
+  - **Shiky**: for code blocks syntax highlighting. I will use it on the technical articles where I will need to write code directly in the article.
 
-  #### Back-End
-  - Node.js: to handle the back-end.
-  - Next-intl: to handle localisation of the website (which currently English and French).
-  - Upstash: to handle the database of the blog.
+  ### Back-End
+  - **Node.js**: to handle the back-end.
+  - **Next-intl**: to handle localisation of the website (which currently English and French).
+  - **Upstash**: to handle the database of the blog.
 
   ## The categories of articles
   The blog posts will mainly be written on my learnings and discoveries in my journey to become a Web developer.
@@ -91,21 +114,25 @@ publishedAt: 2025-06-24
   ## Tech stack
   Pour la partie technique de ce blog, j'utilise la tech stack suivante:
 
-  #### Framework: Next.js
+  > - Framework : <I.Nextjs className={iconsClassName}/>
+  > - Front-End : <I.MDX className={iconsClassName}/> <I.Motion className={iconsClassName}/> <I.TailwindCSS className={iconsClassName}/>
+  > - Back-End : <I.Nodejs className={iconsClassName}/>
+
+  ### Framework: Next.js
   Next.js est probablement le framework le plus utilisé pour le développement Web. Il n'est pas difficile à apprendre, et il y a beaucoup d'informations en ligne et de documentation. Aimé ou détesté, j'ai personnellement choisi Next.js parce qu'il est très pratique.
 
-  #### Front-End
-  - MDX: pour écrire les articles. Je trouve MDX vraiment pertinent car c'est basé sur le format "Markdown", qui est plus intuitif que l'HTML car il n'y a pas besoin de mettre des balises HTML partout. En plus, on peut utiliser des composants JSX, ce qui est très pratique.
-  - Motion: pour gérer les animations.
-  - Tailwind CSS: une librairie basique pour le style du site.
-  - DaisyUI: un plugin Tailwind CSS pour simplifier son utilisation.
-  - Lucide React: une librairie d'icones au format JSX.
-  - Shiky: pour la syntaxe et le style des blocks de code intégrés dans les articles.
+  ### Front-End
+  - **MDX** :  pour écrire les articles. Je trouve MDX vraiment pertinent car c'est basé sur le format "[Markdown](https://fr.wikipedia.org/wiki/Markdown)", qui est plus intuitif que l'HTML car il n'y a pas besoin de mettre des balises HTML partout. En plus, on peut utiliser même des composants JSX, ce qui est très pratique !
+  - **Motion** :  pour gérer les animations.
+  - **Tailwind CSS** : une librairie basique pour le style du site.
+  - **DaisyUI** :  un plugin Tailwind CSS pour simplifier son utilisation.
+  - **Lucide React** : une librairie d'icones au format JSX.
+  - **Shiky** :  pour la syntaxe et le style des blocks de code intégrés dans les articles.
 
-  #### Back-End
-  - Node.js: pour gérer le back-end.
-  - Next-intl: pour gérer les traductions des pages du site (qui supporte actuellement le français et l'anglais).
-  - Upstash: pour gérer la base de données du blog.
+  ### Back-End
+  - **Node.js** : pour gérer le back-end.
+  - **Next-intl** : pour gérer les traductions des pages du site (qui supporte actuellement le français et l'anglais).
+  - **Upstash** : pour gérer la base de données du blog.
 
   ## Les categories d'articles
   Les articles de ce blog seront principalement sur mon apprentissage et mes découvertes dans le développement Web.

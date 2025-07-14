@@ -1,4 +1,8 @@
 {
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Error 404: this page could not be found."
+  },
   "Header": {
     "home": "Home",
     "about": "About",
@@ -65,15 +69,14 @@
   },
   "BlogPage": {
     "metadata": {
+      "title": "Blog - Yamine Daroueche",
       "description": "The blog of Yamine Daroueche, student in Web development"
     },
     "featuredPosts": "Featured Posts",
     "morePosts": "More posts",
     "readMore": "Read more",
     "postPage": {
-      "home": "Home",
-      "loading":"Loading",
-      "notFound": "The blog post \"{slug}\" was not found :("
+      "loading":"Loading"
     }
   },
   "Footer": {

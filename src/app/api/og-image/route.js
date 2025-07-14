@@ -1,19 +1,30 @@
+import { defaultLocale, locales } from "@/src/i18n/config";
+import { getTranslations } from "next-intl/server";
 import { ImageResponse } from "next/og";
 import { Icons } from "@/src/components/ui/Icons";
-import { getTranslations } from "next-intl/server";
+import { NextResponse } from "next/server";
 
 export const runtime = "edge";
 
-export async function GET(request) {
+export async function GET(req) {
   try {
-    const {searchParams } = new URL(request.url);
-    const locale = searchParams.has("locale") ? searchParams.get("locale") : "en";
-    const pageName = searchParams.has("page") ? searchParams.get("page") : "Root";
+    const { searchParams } = new URL(req.url);
+    
+    const locale = searchParams.get("locale");
+    if (!locale || !locales.includes(locale))
+      return new NextResponse("'locale' has a wrong value or is missing", { status: 405 });
+
+    const pageName = searchParams.get("page");
+    if (!pageName || !["Root", "About", "Blog"].includes(pageName)) 
+      return new NextResponse("'page' has a wrong value or is missing", { status: 405 });
+
     const t = await getTranslations({locale, namespace: `${pageName}Page.metadata`});
 
     const MontserratFont = await fetch(
-      new URL("../../../../assets/fonts/Montserrat-Bold.ttf", import.meta.url)
+      new URL("../../../assets/fonts/Montserrat-Bold.ttf", import.meta.url)
     ).then(res => res.arrayBuffer());
+
+    const pagePath = (pageName !== "Root") ? "/"+pageName.toLowerCase() : ""
     
     return new ImageResponse(
       (
@@ -27,7 +38,7 @@ export async function GET(request) {
             <h3 tw="text-xl">{t("description")}</h3>
           </div>
           <div tw="flex justify-between">
-            <small tw="">www.yaminedaroueche.com</small>
+            <small tw="">www.yaminedaroueche.com{pagePath}</small>
             <div tw="flex items-center">
               <Icons.GitHub/>
               <small tw="ml-2">github.com/yamine-dr</small>

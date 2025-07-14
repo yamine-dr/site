@@ -1,40 +1,20 @@
 "use server"
+import { getLocale, getTranslations } from 'next-intl/server'
+import { getMetadata } from '../metadata'
 import { Link } from '@/src/i18n/navigation'
-import { getTranslations } from 'next-intl/server'
-import { getURLWithPathname } from '../actions'
 
-export async function generateMetadata({ params }) {
-  const { locale } = await params
+export async function generateMetadata() {
+  const locale = await getLocale()
   const t = await getTranslations("RootPage.metadata")
-  const url = "https://yaminedaroueche.com"
-  return {
-    title: t("title"),
-    description: t("description"),
-    author: [{ name: "Yamine Daroueche", url }],
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      url,
-      siteName: t("title"),
-      locale,
-      type: "website",
-      images: [
-        {
-          url: await getURLWithPathname(`/api/og?page=Root&locale=${locale}`),
-          width: 1200,
-          height: 630,
-        }
-      ],
-    },
-  }
+  return getMetadata(t, "/", locale)
 }
 
 // Page rendered when '/' is requested
 export default async function RootPage() {
   const t = await getTranslations()
-  const LinkClassName = "btn btn-info p-5 text-lg"
+  const LinkClassName = "btn btn-info p-10 text-4xl"
   return (
-    <div className="py-40 flex gap-20 justify-center items-center">
+    <div className="my-30 mx-auto size-fit flex flex-wrap gap-25 justify-center">
       <Link href="/about" className={LinkClassName}>
         {t("Header.about")}
       </Link>

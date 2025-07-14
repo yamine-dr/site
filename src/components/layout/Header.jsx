@@ -60,7 +60,7 @@ export default function Header() {
         <>
           <div className="navbar-start gap-7 w-fit">
             <h2 className="my-auto text-xl md:text-3xl font-bold text-center">
-              <Link href="/">YD</Link>
+              <Link href="/"><Icons.YDLogo size={28}/></Link>
             </h2>
           </div>
 

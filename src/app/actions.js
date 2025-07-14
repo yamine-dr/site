@@ -46,7 +46,14 @@ export async function submitContactForm(previousFormState, formData) {
   }
 }
 
-export async function getURLWithPathname(pathname) {
+export async function getBaseUrl() {
+  const headersList = await headers();
+  const protocol = headersList.get('x-forwarded-proto') || 'https';
+  const host = headersList.get('host');
+  return `${protocol}://${host}`;
+}
+
+export async function getFullUrl(pathname) {
   const headersList = await headers();
   const protocol = headersList.get('x-forwarded-proto') || 'https';
   const host = headersList.get('host');

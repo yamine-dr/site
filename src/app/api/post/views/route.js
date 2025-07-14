@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import axios from "axios";
 import { redis } from "@/src/libs/redis";
 const crypto = require("node:crypto");
@@ -41,6 +41,7 @@ export async function POST(req) {
     if (!isNewView) return new NextResponse(null, { status: 202 });
   }
 
-  await redis.incr(`post${id}:views`);
+  // increment views count only in production
+  if (process.env.NODE_ENV === "production") await redis.incr(`post${id}:views`);
   return new NextResponse(null, { status: 202 });
 }

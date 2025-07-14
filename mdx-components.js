@@ -6,12 +6,12 @@ export function useMDXComponents(components) {
       <h1 className="font-bold">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 className="font-medium mt-8 mb-3">{children}</h2>
+      <h2 className="font-bold mt-8 mb-3">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="font-medium mt-8 mb-3">{children}</h3>
+      <h3 className="font-bold mt-8 mb-3">{children}</h3>
     ),
-    h4: ({ children }) => <h4 className="font-medium">{children}</h4>,
+    h4: ({ children }) => <h4 className="font-bold">{children}</h4>,
     p: ({ children }) => (
       <p className="leading-snug">{children}</p>
     ),

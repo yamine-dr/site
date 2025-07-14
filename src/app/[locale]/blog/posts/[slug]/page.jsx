@@ -1,5 +1,7 @@
-import { getLocalisedPost } from "@/src/libs/posts"
-import { getLocale, getTranslations } from "next-intl/server"
+"use server"
+import { getPost } from "@/src/libs/posts"
+import { getTranslations } from "next-intl/server"
+import { getBlogPostMetadata } from "@/src/app/metadata"
 import { Link } from "@/src/i18n/navigation"
 import { notFound } from "next/navigation"
 import Image from "next/image"
@@ -10,29 +12,18 @@ import { PostViews } from "@/src/components/blog-page/PostViews"
 
 export async function generateMetadata({ params }) {
   const { slug, locale } = await params
-  const post = await getLocalisedPost(slug, locale)
-  if (!post) {
-    const t = await getTranslations("Metadata")
-    return {
-      title: t("notFound.title"),
-      description: t("notFound.description"),
-    }
-  }
-
-  return {
-    title: post.title,
-    description: post.description,
-  }
+  return await getBlogPostMetadata(slug, locale)
 }
 
 export default async function BlogPostPage({ params }) {
   const { slug, locale } = await params
-  const post = await getLocalisedPost(slug, locale)
+  const post = await getPost(slug, locale)
   if (!post) {
     notFound()
   }
 
   const views = Number(await redis.get(`post${post.id}:views`)) ?? 0
+
   return (
     <article className="prose prose-sm lg:prose-lg mx-auto">
       <small>

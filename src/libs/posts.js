@@ -1,70 +1,12 @@
-import path from "node:path"; 
-import { promises as fs } from "node:fs";
-import matter from "gray-matter";
+import { getFullUrl } from "../app/actions";
 
-const postsDirectory = path.join(process.cwd(), "blog-posts");
-
-export async function getPosts() {
-  const files = await fs.readdir(postsDirectory);
-  const fileNames = files.filter(file => file.endsWith(".mdx"));
-  
-  const posts = [];
-  for await (const fileName of fileNames) {
-    const filePath = path.join(postsDirectory, fileName);
-    const fileContent = await fs.readFile(filePath, "utf-8");
-    const frontMatter = matter(fileContent);
-
-    // Skip unpublished posts in production
-    if (!frontMatter.data.published && process.env.NODE_ENV !== "development") {
-      continue;
-    }
-
-    posts.push({
-      ...frontMatter.data,
-      id: fileName.substring(0, 3).replace(/0+/, ""),
-      slug: fileName.replace(/^\d+-/,"").replace(".mdx", ""),
-      content: frontMatter.content,
-    })
-  }
-  
-  return posts;
+export async function getPosts(locale) {
+  const postsURL = await getFullUrl(`/api/posts?locale=${locale}`);
+  const posts = await fetch(postsURL);
+  return await posts.json();
 }
 
-export async function getLocalisedPosts(locale) {
-  const files = await fs.readdir(postsDirectory);
-  const fileNames = files.filter(file => file.endsWith(".mdx"));
-
-  const posts = [];
-  for await (const fileName of fileNames) {
-    const filePath = path.join(postsDirectory, fileName);
-    const fileContent = await fs.readFile(filePath, "utf-8");
-    const frontMatter = matter(fileContent);
-
-    // Skip unpublished posts in production
-    if (!frontMatter.data.published && process.env.NODE_ENV !== "development") {
-      continue;
-    }
-
-    const { title, description, ...rest } = frontMatter.data;
-    posts.push({
-      ...rest,
-      id: fileName.substring(0, 3).replace(/0+/, ""),
-      title: title[locale], // extract the localized title
-      description: description[locale], // Extract the localized description
-      slug: fileName.replace(/^\d+-/,"").replace(".mdx", ""),
-      content: frontMatter.content,
-    });
-  }
-
-  return posts;
-}
-
-export async function getPost(slug) {
-  const posts = await getPosts();
-  return posts.find(post => post.slug === slug);
-}
-
-export async function getLocalisedPost(slug, locale) {
-  const posts = await getLocalisedPosts(locale);
+export async function getPost(slug, locale) {
+  const posts = await getPosts(locale);
   return posts.find(post => post.slug === slug);
 }

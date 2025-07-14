@@ -8,7 +8,7 @@ import { motion } from "motion/react"
  */
 export default function Section({ id = "", animation, className, children }) {
   let Section
-  className = `
+  const finalClassName = `
     px-3 md:px-[10%] pt-5 pb-10 w-full ${id !== "contact" ? "min-h-[85vh]" : ""} flex flex-col justify-center max-md:max-w-full ${className}
   `
 
@@ -23,7 +23,7 @@ export default function Section({ id = "", animation, className, children }) {
             scale: { type: "spring", visualDuration: 0.6, bounce: 0 },
           }}
           id={id}
-          className={className}
+          className={finalClassName}
         >
             {children}
         </motion.section>
@@ -40,7 +40,7 @@ export default function Section({ id = "", animation, className, children }) {
             scale: { type: "spring", visualDuration: 0.6, bounce: 0 },
           }}
           id={id}
-          className={className}
+          className={finalClassName}
         >
             {children}
         </motion.section>
@@ -49,7 +49,7 @@ export default function Section({ id = "", animation, className, children }) {
   
     default:
       Section = (
-        <section id={id} className={className}>
+        <section id={id} className={finalClassName}>
           {children}
         </section>
       )

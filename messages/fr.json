@@ -1,4 +1,8 @@
 {
+  "NotFound": {
+    "title": "Page introuvable",
+    "description": "Erreur 404 : la page recherchée n'a pas pu être trouvée."
+  },
   "Header": {
     "home": "Acceuil",
     "about": "À propos",
@@ -14,7 +18,7 @@
   },
   "AboutPage": {
     "metadata": {
-      "title": "Yamine Daroueche - développeur Web",
+      "title": "Portfolio - Yamine Daroueche",
       "description":"C'est mon site portfolio, où je présente mes projets de développement Web."
     },
     "hero": {
@@ -65,15 +69,14 @@
   },
   "BlogPage": {
     "metadata": {
-      "description": "le blog de Yamine Daroueche, étudiant en développement Web"
+      "title": "Blog - Yamine Daroueche",
+      "description": "Le blog de Yamine Daroueche, étudiant en développement Web"
     },
     "featuredPosts": "Articles à la une",
     "morePosts": "Plus d'articles",
     "readMore": "Lire l'article",
     "postPage": {
-      "home": "Acceuil",
-      "loading": "Chargement",
-      "notFound": "L'article \"{slug}\" n'a pas été trouvé :("
+      "loading": "Chargement"
     }
   },
   "Footer": {
