@@ -10,7 +10,6 @@ import PostCard from "@/src/components/blog-page/PostCard"
 export async function generateMetadata() {
   const locale = await getLocale()
   const t = await getTranslations("BlogPage.metadata")
-  const pagePath = "/blog"
   return getMetadata(t, "/blog", locale)
 }
 
@@ -29,11 +28,11 @@ export default async function BlogPage() {
         <h1 className="text-center text-5xl font-bold">Blog</h1>
         <div className="flex justify-between items-center">
           <h1 className="text-3xl max-md:text-xl">{t("featuredPosts")}</h1>
-          {/* <a href="#"
+          <a href="#"
             className="md:w-33 flex justify-end items-center gap-1 max-md:text-xs text-sm text-info md:hover:animate-bounce-horizontal"
           >
             {t("morePosts")} <Icons.ArrowRight className="size-1/5"/>
-          </a> */}
+          </a>
         </div>
 
         {/* post cards */}

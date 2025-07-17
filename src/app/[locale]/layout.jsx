@@ -16,9 +16,7 @@ const MontserratFont = Montserrat({
   weight: "500",
 })
 
-export async function generateMetadata() {
-  return { metadataBase: await getBaseUrl() }
-}
+export const generateMetadata = async () => ({ metadataBase: await getBaseUrl() })
 
 export default async function RootLayout({ children, params }) {
   // Ensure that the incoming `locale` is valid

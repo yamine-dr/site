@@ -8,7 +8,7 @@ import { MdxLocalised } from "./MdxLocalised"
 import { useTranslations } from "next-intl"
 import { Icons } from "@/src/components/ui/Icons"
 
-export const dynamic = "force-static"
+
 
 export default function Mdx({ children }) {
   const t = useTranslations("BlogPage.postPage")
@@ -32,6 +32,7 @@ export default function Mdx({ children }) {
           pre: MdxPre,
           Localised: MdxLocalised,
           I: Icons,
+          CustomLink: ({ name, href }) => <a href={href} target="_blank" rel="noopener">{name}</a>
         })}
       />
     </Suspense>

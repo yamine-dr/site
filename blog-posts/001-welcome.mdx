@@ -12,6 +12,13 @@ publishedAt: 2025-06-24
 ---
 
 export const iconsClassName = "mx-1"
+export const techStackGridStyle = "grid gap-2 grid-rows-3 grid-cols-12"
+export const techStackCellStyle = `
+  p-5 flex flex-col gap-5 justify-center items-center bg-base-300 rounded-md
+`
+export const techStackIconSize = 70
+export const techStackTopCellsStyle = `col-span-6 sm:col-span-4 lg:col-span-4 ${techStackCellStyle}`
+export const techStackBottomCellsStyle = `col-span-6 sm:col-span-4 lg:col-span-3 ${techStackCellStyle}`
 
 <Localised lang="en">
   This is the first article of my blog!
@@ -38,26 +45,54 @@ export const iconsClassName = "mx-1"
   ## Tech stack
   For the technical aspect of this blog, I decided to use the following tech stack:
 
-  {/* <div className="flex flex-col">
-    <div className="px-2 flex gap-5 justify-center items-center text-base-100 bg-base-content rounded-md">
-      FRONT-END:
-      <div className="flex flex-col text-center">
-        <I.MDX className={iconsClassName}/> <br/> MDX
-      </div>
-      <div className='h-15 w-0.5 border border-neutral/20'/>
-      <div className="flex flex-col text-center">
-        <I.Motion className={iconsClassName}/> <br/> Motion
-      </div>
-      <div className='h-15 w-0.5 border border-neutral/20'/>
-      <div className="flex flex-col text-center">
-        <I.TailwindCSS className={iconsClassName}/> <br/> Tailwind CSS
-      </div>
+  <div className={techStackGridStyle}>
+    <div className={techStackTopCellsStyle}>
+      <I.Nextjs.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Next.js" href={I.Nextjs.url}/>
     </div>
-  </div> */}
-
-  > - Framework : <I.Nextjs className={iconsClassName}/>
-  > - Front-End : <I.MDX className={iconsClassName}/> <I.Motion className={iconsClassName}/> <I.TailwindCSS className={iconsClassName}/>
-  > - Back-End : <I.Nodejs className={iconsClassName}/>
+    <div className={techStackTopCellsStyle}>
+      <I.React.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="React" href={I.React.url}/>
+    </div>
+    <div className={techStackTopCellsStyle}>
+      <I.MDX.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="MDX" href={I.MDX.url}/>
+    </div>
+    
+    <div className={techStackBottomCellsStyle}>
+      <I.Motion.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Motion" href={I.Motion.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.TailwindCSS.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Tailwind CSS" href={I.TailwindCSS.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.DaisyUI.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="DaisyUI" href={I.DaisyUI.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.LucideReact.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Lucide" href={I.LucideReact.url}/>
+    </div>
+    
+    <div className={techStackBottomCellsStyle}>
+      <I.Shiki.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Shiki" href={I.Shiki.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.Nodejs.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Node.js" href={I.Nodejs.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.NextIntl.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Next-intl" href={I.NextIntl.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.Upstash.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Upstash" href={I.Upstash.url}/>
+    </div>
+  </div>
 
   ### Main framework: Next.js
   Next.js is probably one of the most used framework for Web development. It's not hard to learn it, and there is a lot of documentation and information online about it. Love it or hate it, I personnally choosed Next.js for its convenience.
@@ -112,11 +147,56 @@ export const iconsClassName = "mx-1"
   C'est aussi un espace créatif pour moi dans lequel je peux partager des idées, des expériences sur d'autres sujets comme le voyage.
 
   ## Tech stack
-  Pour la partie technique de ce blog, j'utilise la tech stack suivante:
+  Pour la partie technique de ce blog, j'utilise les technologies suivantes:
 
-  > - Framework : <I.Nextjs className={iconsClassName}/>
-  > - Front-End : <I.MDX className={iconsClassName}/> <I.Motion className={iconsClassName}/> <I.TailwindCSS className={iconsClassName}/>
-  > - Back-End : <I.Nodejs className={iconsClassName}/>
+  <div className={techStackGridStyle}>
+    <div className={techStackTopCellsStyle}>
+      <I.Nextjs.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Next.js" href={I.Nextjs.url}/>
+    </div>
+    <div className={techStackTopCellsStyle}>
+      <I.React.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="React" href={I.React.url}/>
+    </div>
+    <div className={techStackTopCellsStyle}>
+      <I.MDX.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="MDX" href={I.MDX.url}/>
+    </div>
+    
+    <div className={techStackBottomCellsStyle}>
+      <I.Motion.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Motion" href={I.Motion.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.TailwindCSS.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Tailwind CSS" href={I.TailwindCSS.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.DaisyUI.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="DaisyUI" href={I.DaisyUI.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.LucideReact.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Lucide" href={I.LucideReact.url}/>
+    </div>
+    
+    <div className={techStackBottomCellsStyle}>
+      <I.Shiki.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Shiki" href={I.Shiki.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.Nodejs.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Node.js" href={I.Nodejs.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.NextIntl.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Next-intl" href={I.NextIntl.url}/>
+    </div>
+    <div className={techStackBottomCellsStyle}>
+      <I.Upstash.icon size={techStackIconSize} className={iconsClassName}/>
+      <CustomLink name="Upstash" href={I.Upstash.url}/>
+    </div>
+  </div>
 
   ### Framework: Next.js
   Next.js est probablement le framework le plus utilisé pour le développement Web. Il n'est pas difficile à apprendre, et il y a beaucoup d'informations en ligne et de documentation. Aimé ou détesté, j'ai personnellement choisi Next.js parce qu'il est très pratique.
