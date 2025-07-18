@@ -22,6 +22,7 @@ export default async function BlogPage() {
   posts = await Promise.all(posts.map(async (post) => {
     return { ...post, views: Number(await redis.get(`post${post.id}:views`)) ?? 0 }
   }))
+  
   return (
     <>
       <Section id="featured-posts" className="flex flex-col gap-5">

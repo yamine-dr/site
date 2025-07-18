@@ -1,7 +1,7 @@
 "use client"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import { Icons, iconsWithAnchorClassName as iconsClassName } from "../ui/Icons"
+import { Icons as I, mediaIconClassName, iconBackgroundClassName as bgClassName } from "../ui/Icons"
 import { Link } from "@/src/i18n/navigation"
 
 export default function ProjectCard({
@@ -15,12 +15,12 @@ export default function ProjectCard({
 }) {
   const GitHubIcon = ( gitHubRepoURL ?
     <a href={gitHubRepoURL} target="_blank" rel="noopener noreferrer">
-      <Icons.GitHub strokeWidth={2.5} className={iconsClassName}/>
+      <I.GitHub strokeWidth={2.5} className={mediaIconClassName}/>
     </a>
     :
     null
   )
-  const LinkIcon = <Icons.LucideLink strokeWidth={2.5} className={iconsClassName}/>
+  const LinkIcon = <I.LucideLink strokeWidth={2.5} className={mediaIconClassName}/>
   const projectURLIcon = ( projectURL ? 
     (projectURL.startsWith("http") ?
       <a href={projectURL} target="_blank" rel="noopener noreferrer">
@@ -62,8 +62,12 @@ export default function ProjectCard({
     <hr className="w-full"/>
     {description}
 
-    <div className="flex flex-wrap gap-7 justify-start text-center whitespace-nowrap">
-      {techStackIcons.map((Icon, index) => <Icon key={`icon-${index}`}/>)}
+    <div className="flex flex-wrap gap-5 justify-start text-center whitespace-nowrap">
+      {techStackIcons.map((I, index) => (
+        <a href={I.url} target="_blank" rel="noopener noreferrer" key={`icon-${index}`}>
+          <I.icon size={55} className={bgClassName}/>
+        </a>
+      ))}
     </div>
 
     <div className="flex gap-4 justify-start text-center whitespace-nowrap">

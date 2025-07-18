@@ -111,7 +111,7 @@ export const getBlogPostMetadata = async (slug, locale) => {
       locale,
       images: [
         {
-          url: `/api/post/og-image?slug=${slug}&locale=${locale}`,
+          url: `/api/posts/${post.id}/og-image?slug=${slug}&locale=${locale}`,
           width: 1200,
           height: 630,
           alt: post.title,

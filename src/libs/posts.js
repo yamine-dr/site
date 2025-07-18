@@ -1,10 +1,11 @@
 import path from "node:path"; 
 import { promises as fs } from "node:fs";
 import matter from "gray-matter";
+// import { z } from "zod";
 
 const postsDirectory = path.join(process.cwd(), "blog-posts");
 
-export async function getPosts(locale) {
+export const getPosts = async (locale) => {
   const files = await fs.readdir(postsDirectory);
   const fileNames = files.filter(file => file.endsWith(".mdx"));
 
@@ -33,7 +34,7 @@ export async function getPosts(locale) {
   return posts;
 }
 
-export async function getPost(slug, locale) {
+export const getPost = async (slug, locale) => {
   const posts = await getPosts(locale);
   return posts.find(post => post.slug === slug);
 }

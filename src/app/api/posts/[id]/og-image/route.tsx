@@ -1,12 +1,13 @@
-import { locales } from "@/src/i18n/config";
 import { NextResponse } from "next/server";
-import { getPost } from "@/src/libs/posts";
 import { ImageResponse } from "next/og";
-import { Icons } from "@/src/components/ui/Icons";
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { locales } from "@/src/i18n/config";
+import { getPost } from "@/src/libs/posts";
+import { Icons } from "@/src/components/ui/Icons";
+import type { NextRequest } from "next/server";
 
-export async function GET(req) {
+export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 

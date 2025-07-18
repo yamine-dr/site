@@ -1,9 +1,13 @@
 import { X, Menu, Languages, ArrowRight, Eye, Moon, SunMedium as Sun, Clipboard, Link as LucideLink, Mail } from "lucide-react"
 
+// styling
+const techIconClassName = "inline-block"
+const iconBackgroundClassName = "p-2 bg-base-300 border-[0.5px] border-base-content/20 rounded-md"
+const mediaIconClassName = "text-base-content/80 hover:scale-140 hover:text-base-content transition-all"
+
 const lucideIcons = { X, Menu, Languages, ArrowRight, Eye, Moon, Sun, Clipboard, LucideLink, Mail }
 
-const techIconSize = 43
-const techIconClassName = "inline-block"
+const techIconSize = 65
 const techIcons = {
   CSS: {
     icon: ({ size = techIconSize, className = "" }) => (
@@ -18,7 +22,7 @@ const techIcons = {
         <path fill="#264DE4" d="M127.844 360.088 23.662 331.166.445 70.766h255.11l-23.241 260.36z"></path>
         <path fill="#2965F1" d="m212.417 314.547 19.86-222.49H128V337.95z"></path>
         <path fill="#EBEBEB" d="m53.669 188.636 2.862 31.937H128v-31.937zm-5.752-64.641 2.903 31.937H128v-31.937zM128 271.58l-.14.037-35.568-9.604-2.274-25.471h-32.06l4.474 50.146 65.421 18.16.147-.04z"></path>
-        <path d="M60.484 0h38.68v16.176H76.66v16.176h22.506v16.175H60.484zm46.417 0h38.681v14.066h-22.505v2.813h22.505v32.352h-38.68V34.46h22.505v-2.813H106.9zm46.418 0H192v14.066h-22.505v2.813H192v32.352h-38.681V34.46h22.505v-2.813H153.32V0z"></path>
+        <path fill="#currentColor" className="fill-black dark:fill-white" d="M60.484 0h38.68v16.176H76.66v16.176h22.506v16.175H60.484zm46.417 0h38.681v14.066h-22.505v2.813h22.505v32.352h-38.68V34.46h22.505v-2.813H106.9zm46.418 0H192v14.066h-22.505v2.813H192v32.352h-38.681V34.46h22.505v-2.813H153.32V0z"></path>
         <path fill="#FFF" d="m202.127 188.636 5.765-64.641H127.89v31.937h45.002l-2.906 32.704H127.89v31.937h39.327l-3.708 41.42-35.62 9.614v33.226l65.473-18.145.48-5.396 7.506-84.08z"></path>
       </svg>
     ),
@@ -243,7 +247,7 @@ const techIcons = {
     icon: ({ size = techIconSize, className = "" }) => (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={size*1.4}
+        width={size}
         preserveAspectRatio="xMinYMin meet"
         viewBox="0 -183.5 512 512"
         className={`${techIconClassName} ${className}`}
@@ -343,7 +347,7 @@ const techIcons = {
 
 const mediaIconSize = 25
 const mediaIcons = {
-  GitHub: ({ className }) => (
+  GitHub: ({ className }: { className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={mediaIconSize}
@@ -367,7 +371,7 @@ const mediaIcons = {
       </g>
     </svg>
   ),
-  LinkedIn: ({ className }) => (
+  LinkedIn: ({ className }: { className: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={mediaIconSize}
@@ -388,8 +392,8 @@ const mediaIcons = {
  * @param {Icon[]} mediaIcons: GitHub, LinkedIn
  * @example <Icons.Menu size={17}/>
  */
-export const Icons = {
-  YDLogo: ({ size = 32, className }) => (
+const Icons = {
+  YDLogo: ({ size = 32, className }: { size?: number, className?: string }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
@@ -414,5 +418,4 @@ export const Icons = {
   ...mediaIcons,
 }
 
-/** styling for icons with link */
-export const iconsWithAnchorClassName = "text-base-content/80 hover:scale-140 hover:text-base-content transition-all"
+export { Icons, iconBackgroundClassName, mediaIconClassName }

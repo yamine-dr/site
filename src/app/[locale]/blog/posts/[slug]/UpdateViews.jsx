@@ -7,10 +7,8 @@ import { useEffect } from "react"
  */
 export default function UpdateViews({ id }) {
   useEffect(() => {
-    fetch("/api/post/views", {
+    fetch(`/api/posts/${id}/views`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id }),
     })
   }, [id])
   

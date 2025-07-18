@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl"
-import { Icons, iconsWithAnchorClassName as iconsClassName } from "../ui/Icons"
+import { Icons, mediaIconClassName } from "../ui/Icons"
 import { Link } from "@/src/i18n/navigation"
 
 /** Navigation links component for the footer */
@@ -38,7 +38,7 @@ const MediaIcons = () => {
     const Icon = Icons[name]
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" key={name}>
-        <Icon className={iconsClassName}/>
+        <Icon className={mediaIconClassName}/>
       </a>
     )
   })

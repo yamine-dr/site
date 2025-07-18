@@ -1,9 +1,9 @@
 "use client"
 import { useTranslations } from "next-intl"
 import Section from "../layout/Section"
-import { Icons } from "../ui/Icons"
+import { Icons as I, iconBackgroundClassName as bgClassName } from "../ui/Icons"
 
-export default function About() {
+const About = () => {
   const t = useTranslations("AboutPage.about")
   return (
     <Section id="about" className="flex flex-col gap-10 justify-center items-center">
@@ -25,15 +25,22 @@ export default function About() {
           {t("techStack")}
         </h4>
         <div className="flex gap-7 justify-center">
-          <Icons.Nextjs/>
-          <Icons.React/>
-          <Icons.TailwindCSS/>
+          {[I.Nextjs, I.React, I.TailwindCSS].map((I, index) => (
+            <a href={I.url} target="_blank" rel="noopener noreferrer" key={`about-icons1-${index}`}>
+              <I.icon className={bgClassName}/>
+            </a>
+          ))}
         </div>
         <div className="flex gap-7 justify-center">
-          <Icons.Nodejs/>
-          <Icons.MySQL/>
+          {[I.Nodejs, I.Upstash].map((I, index) => (
+            <a href={I.url} target="_blank" rel="noopener noreferrer" key={`about-icons1-${index}`}>
+              <I.icon className={bgClassName}/>
+            </a>
+          ))}
         </div>
       </div>
     </Section>
   )
 }
+
+export default About
